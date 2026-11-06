@@ -1,4 +1,7 @@
 import { EditorView, keymap } from '@codemirror/view';
+import { Compartment } from '@codemirror/state';
+import { initTheme } from './theme.js';
+import { editorTheme } from './editor-theme.js';
 import { basicSetup } from 'codemirror';
 import { python } from '@codemirror/lang-python';
 import { indentWithTab } from '@codemirror/commands';
@@ -14,6 +17,11 @@ let storage;
 try { storage = window.localStorage; } catch { storage = { getItem() { throw Error(); }, setItem() { throw Error(); } }; }
 const store = createStore(storage, () => { document.querySelector('#storage-warning').hidden = false; });
 let editor = null, controller = null, pageToken = 0;
+const themeCompartment = new Compartment();
+initTheme({ root: document.documentElement, select: document.querySelector('#theme'), media: window.matchMedia('(prefers-color-scheme: dark)'), storage, onChange: theme => {
+  document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#151d19' : '#f6f7f3';
+  if (editor) editor.dispatch({ effects: themeCompartment.reconfigure(editorTheme(theme === 'dark')) });
+} });
 const topics = [...new Set(exercises.map(e => e.topic))];
 function badge(status) { return `<span class="badge ${status === 'Resolvido' ? 'solved' : status === 'Não iniciado' ? '' : 'active'}">${escape(status)}</span>`; }
 function catalog() {
@@ -48,7 +56,7 @@ function exercisePage(exercise) {
     <section class="panel history-panel"><div class="panel-label">04 <span>Histórico local</span></div><div id="history"></div></section></div></div>`;
   editor = new EditorView({
     doc: store.get(exercise.id).draft ?? exercise.starter ?? '',
-    extensions: [basicSetup, python(), keymap.of([indentWithTab]), EditorView.contentAttributes.of({ 'aria-label': 'Código Python', spellcheck: 'false' }), EditorView.updateListener.of(update => {
+    extensions: [basicSetup, python(), themeCompartment.of(editorTheme(document.documentElement.dataset.theme === 'dark')), keymap.of([indentWithTab]), EditorView.contentAttributes.of({ 'aria-label': 'Código Python', spellcheck: 'false' }), EditorView.updateListener.of(update => {
       if (!update.docChanged) return;
       const record = store.get(exercise.id);
       record.draft = update.state.doc.toString();

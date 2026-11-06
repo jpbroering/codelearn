@@ -29,6 +29,7 @@ O build estático fica em `dist/`. Use um servidor HTTP para abrir o projeto; n�
 - Python em Worker novo por teste, com cancelamento, limite de tempo e saída.
 - Dicas graduais, rascunhos, histórico das últimas 20 submissões e progresso por versão.
 - Busca, filtro de temas e links diretos por fragmento de URL.
+- Tema automático do sistema, com opções claro e noturno; preferência salva neste navegador.
 
 Os testes ocultos estão escondidos apenas na interface: podem ser inspecionados nos arquivos do site. Não há proteção contra fraude. Seu código é executado no próprio navegador, sem envio a um servidor. Não há limite rígido de memória; execute apenas código que você deseja rodar no seu dispositivo.
 
