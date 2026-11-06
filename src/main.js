@@ -12,10 +12,11 @@ import { LIMITS } from './executor.js';
 import { createTabs } from './tabs.js';
 import { createPracticeTests } from './practice-tests.js';
 import { icon } from './icons.js';
+import { escapeHtml as escape } from './html.js';
+import { resultMarkup } from './result-view.js';
 import './style.css';
 
 const main = document.querySelector('main');
-const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 let storage;
 try { storage = window.localStorage; } catch { storage = { getItem() { throw Error(); }, setItem() { throw Error(); } }; }
 const store = createStore(storage, () => { document.querySelector('#storage-warning').hidden = false; });
@@ -163,11 +164,7 @@ function exercisePage(exercise) {
     const success = result.status === 'accepted';
     main.querySelector('#result-indicator').textContent = success ? '✓' : '✕';
     main.querySelector('#result-indicator').className = success ? 'success' : 'failure';
-    main.querySelector('#results').innerHTML = `
-      <h3 class="${success ? 'success' : 'failure'}">${success ? '✓' : '✕'} ${escape(labels[result.status])}</h3>
-      <p class="muted small">${official ? 'Avaliação oficial. A submissão encerra na primeira falha.' : 'Testes de prática. Consulte cada caso em sua aba. Para registrar a resolução, envie a solução.'}</p>
-      ${result.results.map(r => `<details class="result-case" ${r.status !== 'accepted' && !r.hidden ? 'open' : ''}><summary>${r.hidden ? 'Teste oculto' : `Teste ${r.index + 1}`} <span class="${r.status === 'accepted' ? 'success' : 'failure'}">${r.status === 'accepted' ? '✓' : '✕'} ${escape(labels[r.status])}</span></summary>${r.hidden ? '<p>Os dados deste caso não são exibidos. Revise as restrições e consulte as dicas.</p>' : `<div class="result-data"><div><small class="input-label">ENTRADA</small><pre>${escape(r.input)}</pre></div><div><small>ESPERADO</small><pre>${escape(r.expected)}</pre></div><div><small>OBTIDO</small><pre>${escape(r.output)}</pre></div></div>${r.error ? `<pre class="error">${escape(r.error)}</pre>` : ''}`}</details>`).join('')}
-      ${result.status === 'environment-error' ? '<p>Não foi possível preparar o Python. Verifique sua conexão e tente novamente. Seu código permanece no editor.</p>' : ''}`;
+    main.querySelector('#results').innerHTML = resultMarkup(result, official);
     if (official) store.save(exercise.id, addSubmission(store.get(exercise.id), exercise, code, result.status));
     renderHistory();
   }
@@ -180,15 +177,20 @@ function route() {
   controller?.abort(); controller = null;
   editor?.destroy(); editor = null;
   pageToken++;
-  document.querySelector('#catalog-link').toggleAttribute('aria-current', !location.hash || location.hash === '#');
-  if (!location.hash || location.hash === '#') document.querySelector('#catalog-link').setAttribute('aria-current', 'page');
+  const isCatalog = !location.hash || location.hash === '#';
+  document.querySelector('#catalog-link').toggleAttribute('aria-current', isCatalog);
+  if (isCatalog) document.querySelector('#catalog-link').setAttribute('aria-current', 'page');
   const match = location.hash.match(/^#\/exercicio\/([a-z0-9-]+)$/);
-  document.body.classList.toggle('is-exercise', Boolean(match && exercises.some(e => e.id === match[1])));
-  if (!location.hash || location.hash === '#') { document.title = 'Codelearn · Pratique Python'; catalog(); }
-  else {
-    const exercise = match && exercises.find(e => e.id === match[1]);
-    if (exercise) { document.title = `${exercise.title} · Codelearn`; exercisePage(exercise); }
-    else main.innerHTML = '<section class="not-found"><p class="eyebrow">EXERCÍCIO NÃO ENCONTRADO</p><h1>Vamos tentar outro caminho?</h1><a class="button primary" href="#">Voltar aos exercícios</a></section>';
+  const exercise = match && exercises.find(e => e.id === match[1]);
+  document.body.classList.toggle('is-exercise', Boolean(exercise));
+  if (isCatalog) {
+    document.title = 'Codelearn · Pratique Python';
+    catalog();
+  } else if (exercise) {
+    document.title = `${exercise.title} · Codelearn`;
+    exercisePage(exercise);
+  } else {
+    main.innerHTML = '<section class="not-found"><p class="eyebrow">EXERCÍCIO NÃO ENCONTRADO</p><h1>Vamos tentar outro caminho?</h1><a class="button primary" href="#">Voltar aos exercícios</a></section>';
   }
   window.scrollTo(0, 0);
 }

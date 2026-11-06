@@ -49,3 +49,26 @@ test('armazenamento bloqueado ou corrompido usa memória com aviso', () => {
   assert.equal(store.get('a').draft, 'print(1)');
   assert.equal(warnings, 2);
 });
+
+test('cache retorna cópias independentes e evita reler armazenamento', () => {
+  let reads = 0;
+  const storage = { getItem() { reads++; return null; }, setItem() {} };
+  const store = createStore(storage);
+  const record = store.get('a');
+  record.draft = 'print(1)';
+  record.history.push({ date: '2026-11-06', code: 'print(1)', version: 1, status: 'accepted' });
+  assert.equal(store.get('a').draft, null);
+  store.save('a', record);
+  record.history[0].code = 'alterado';
+  assert.equal(store.get('a').history[0].code, 'print(1)');
+  assert.equal(reads, 1);
+});
+
+test('registro JSON com estrutura inválida é rejeitado com aviso', () => {
+  for (const value of [null, {}, { draft: 1, history: [], passedVersion: null }, { draft: null, history: [{}], passedVersion: null }]) {
+    let warnings = 0;
+    const store = createStore({ getItem: () => JSON.stringify(value) }, () => warnings++);
+    assert.deepEqual(store.get('a'), emptyRecord());
+    assert.equal(warnings, 1);
+  }
+});

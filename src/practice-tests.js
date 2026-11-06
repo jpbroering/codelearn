@@ -48,7 +48,22 @@ export function createPracticeTests(root, initialCases, { onChange = () => {} } 
       if (test.result.status === 'environment-error') output.append(element('p', null, 'Não foi possível preparar o Python. Verifique a conexão e tente novamente.'));
     }
   }
-  function clear(test) { test.status = 'idle'; test.result = null; updateCase(test); }
+  function setCaseState(test, status, result = test.result) {
+    test.status = status;
+    test.result = result;
+    updateCase(test);
+  }
+
+  function clear(test) {
+    setCaseState(test, 'idle', null);
+  }
+
+  function selectChangedCase(id) {
+    selectedId = `${id}-tab`;
+    render();
+    tabs.select(selectedId, { focus: true });
+    onChange();
+  }
   function render() {
     list.replaceChildren(); panels.replaceChildren();
     cases.forEach((test, index) => {
@@ -67,8 +82,8 @@ export function createPracticeTests(root, initialCases, { onChange = () => {} } 
       remove.addEventListener('click', () => {
         if (busy || cases.length === 1) return;
         cases.splice(index, 1);
-        selectedId = `${cases[Math.min(index, cases.length - 1)].id}-tab`;
-        render(); tabs.select(selectedId, { focus: true }); onChange();
+        const nextCase = cases[Math.min(index, cases.length - 1)];
+        selectChangedCase(nextCase.id);
       });
       panel.querySelectorAll('textarea').forEach(field => {
         field.value = test[field.dataset.field]; field.disabled = busy;
@@ -82,8 +97,9 @@ export function createPracticeTests(root, initialCases, { onChange = () => {} } 
   }
   add.addEventListener('click', () => {
     if (busy || cases.length >= MAX_CASES) return;
-    const test = makeCase({ input: '', expected: '' }); cases.push(test);
-    selectedId = `${test.id}-tab`; render(); tabs.select(selectedId, { focus: true }); onChange();
+    const test = makeCase({ input: '', expected: '' });
+    cases.push(test);
+    selectChangedCase(test.id);
   });
   function setBusy(value) {
     busy = value;
@@ -96,9 +112,22 @@ export function createPracticeTests(root, initialCases, { onChange = () => {} } 
     getCases: () => cases.map(({ input, expected }) => ({ input, expected })),
     invalidate: () => cases.forEach(clear),
     setBusy,
-    begin() { cases.forEach(test => { test.status = 'queued'; test.result = null; updateCase(test); }); setBusy(true); },
-    phase(index, phase) { const test = cases[index]; if (test) { test.status = phase; updateCase(test); } },
-    result(result) { const test = cases[result.index]; if (test) { test.status = result.status; test.result = result; updateCase(test); } },
-    finish() { cases.filter(test => ['queued', 'loading', 'running'].includes(test.status)).forEach(clear); setBusy(false); },
+    begin() {
+      cases.forEach(test => setCaseState(test, 'queued', null));
+      setBusy(true);
+    },
+    phase(index, phase) {
+      const test = cases[index];
+      if (test) setCaseState(test, phase);
+    },
+    result(result) {
+      const test = cases[result.index];
+      if (test) setCaseState(test, result.status, result);
+    },
+    finish() {
+      const pending = cases.filter(test => ['queued', 'loading', 'running'].includes(test.status));
+      pending.forEach(clear);
+      setBusy(false);
+    },
   };
 }

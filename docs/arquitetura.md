@@ -15,6 +15,8 @@
 | `content/exercises/` | Arquivos JSON descobertos automaticamente pelo catálogo durante o build. |
 | `content/solutions/` | Soluções de referência utilizadas pelos testes; não fazem parte do build da interface. |
 | `src/main.js` | Catálogo, workspace, editor, dicas, testes de prática e histórico. |
+| `src/result-view.js` | Renderização dos resultados, separando casos visíveis e ocultos. |
+| `src/html.js` | Escape de valores inseridos nos templates HTML. |
 | `src/executor.js` | Ciclo de vida do Worker, fases, timeout e cancelamento. |
 | `src/evaluator.js` | Comparação textual, interrupção na primeira falha oficial e supressão de dados ocultos. |
 | `src/storage.js` | Persistência e regras de progresso/versionamento. |

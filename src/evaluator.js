@@ -13,11 +13,25 @@ export async function evaluate(code, tests, { official = false, run = execute, o
   for (let index = 0; index < tests.length; index++) {
     const test = tests[index];
     const result = await run(code, test.input, { ...options, onPhase: phase => options.onProgress?.({ index, total: tests.length, phase }) });
-    const status = result.status === 'completed' ? (compare(result.output, test.expected) ? 'accepted' : 'wrong-answer') : result.status;
+    let status = result.status;
+    if (status === 'completed') {
+      status = compare(result.output, test.expected) ? 'accepted' : 'wrong-answer';
+    }
+
     // Não encaminhar saídas nem mensagens de erro de casos ocultos para a interface/histórico.
-    results.push(official && !test.visible ? { index, hidden: true, status } : { index, hidden: false, status, input: test.input, expected: test.expected, output: result.output ?? '', error: result.error ?? '' });
-    onCaseResult(results.at(-1));
-    if (status === 'cancelled' || status === 'environment-error' || (official && status !== 'accepted')) break;
+    const caseResult = official && !test.visible
+      ? { index, hidden: true, status }
+      : {
+          index, hidden: false, status,
+          input: test.input, expected: test.expected,
+          output: result.output ?? '', error: result.error ?? '',
+        };
+    results.push(caseResult);
+    onCaseResult(caseResult);
+
+    const interrupted = status === 'cancelled' || status === 'environment-error';
+    const failedSubmission = official && status !== 'accepted';
+    if (interrupted || failedSubmission) break;
   }
   return { status: results.find(r => r.status !== 'accepted')?.status ?? 'accepted', results };
 }
