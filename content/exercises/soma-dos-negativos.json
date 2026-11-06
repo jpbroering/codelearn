@@ -1,0 +1,49 @@
+{
+  "id": "soma-dos-negativos",
+  "version": 1,
+  "title": "Soma dos negativos",
+  "topic": "Repetições",
+  "difficulty": "Básico",
+  "summary": "Percorra dez números e acumule somente os valores negativos.",
+  "statement": "Uma estação registra dez variações de temperatura. Leia os dez números inteiros e calcule a soma apenas das variações negativas. Se não houver números negativos, a soma será zero.",
+  "inputFormat": "Dez linhas, cada uma contendo um número inteiro.",
+  "outputFormat": "Um único inteiro com a soma dos valores negativos.",
+  "constraints": "−1 000 ≤ cada número ≤ 1 000. Sempre serão fornecidos exatamente dez números.",
+  "starter": "# Leia dez números e acumule os negativos.\n",
+  "hints": [
+    "Comece com uma variável acumuladora igual a zero e use um laço com dez repetições.",
+    "A cada leitura, some o número ao acumulador somente se ele for menor que zero."
+  ],
+  "tests": [
+    {
+      "input": "1\n-2\n3\n-4\n5\n6\n7\n8\n9\n10\n",
+      "expected": "-6",
+      "visible": true
+    },
+    {
+      "input": "0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "-1\n-1\n-1\n-1\n-1\n-1\n-1\n-1\n-1\n-1\n",
+      "expected": "-10",
+      "visible": true
+    },
+    {
+      "input": "-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n",
+      "expected": "-10000",
+      "visible": false
+    },
+    {
+      "input": "0\n0\n0\n0\n0\n0\n0\n0\n0\n-5\n",
+      "expected": "-5",
+      "visible": false
+    },
+    {
+      "input": "-10\n0\n-20\n0\n-30\n0\n-40\n0\n-50\n0\n",
+      "expected": "-150",
+      "visible": false
+    }
+  ]
+}

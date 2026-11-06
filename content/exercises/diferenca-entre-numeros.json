@@ -1,0 +1,49 @@
+{
+  "id": "diferenca-entre-numeros",
+  "version": 1,
+  "title": "Diferença entre números",
+  "topic": "Decisões",
+  "difficulty": "Básico",
+  "summary": "Descubra o maior valor e calcule a diferença entre dois inteiros.",
+  "statement": "Dois participantes anotaram números inteiros. Leia os números e mostre a diferença do maior pelo menor. O resultado deve ser sempre maior ou igual a zero.",
+  "inputFormat": "Duas linhas com um número inteiro em cada uma.",
+  "outputFormat": "Um único inteiro: o maior número menos o menor.",
+  "constraints": "−1 000 000 ≤ cada número ≤ 1 000 000. Os números podem ser iguais.",
+  "starter": "# Leia os números e decida qual é o maior.\n",
+  "hints": [
+    "Compare os dois números usando if e else.",
+    "Se a for maior que b, calcule a - b; caso contrário, calcule b - a."
+  ],
+  "tests": [
+    {
+      "input": "9\n4\n",
+      "expected": "5",
+      "visible": true
+    },
+    {
+      "input": "2\n8\n",
+      "expected": "6",
+      "visible": true
+    },
+    {
+      "input": "5\n5\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "-7\n-2\n",
+      "expected": "5",
+      "visible": false
+    },
+    {
+      "input": "-3\n4\n",
+      "expected": "7",
+      "visible": false
+    },
+    {
+      "input": "1000000\n-1000000\n",
+      "expected": "2000000",
+      "visible": false
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "area-do-terreno",
+  "version": 1,
+  "title": "Área do terreno",
+  "topic": "Entrada e saída",
+  "difficulty": "Básico",
+  "summary": "Transforme duas medidas na área de um terreno retangular.",
+  "statement": "Uma horta comunitária ocupará um terreno retangular. Leia a largura e o comprimento do terreno e calcule sua área em metros quadrados.",
+  "inputFormat": "Duas linhas, cada uma com um número inteiro: a largura e o comprimento, nessa ordem.",
+  "outputFormat": "Um único número inteiro, correspondente à área. Não imprima unidades ou mensagens adicionais.",
+  "constraints": "1 ≤ largura, comprimento ≤ 10 000.",
+  "starter": "# Leia as duas medidas e calcule a área.\n",
+  "hints": [
+    "Leia cada medida com input() e converta o texto para inteiro usando int().",
+    "A área de um retângulo é largura × comprimento. Use * para multiplicar."
+  ],
+  "tests": [
+    {
+      "input": "3\n5\n",
+      "expected": "15",
+      "visible": true
+    },
+    {
+      "input": "1\n8\n",
+      "expected": "8",
+      "visible": true
+    },
+    {
+      "input": "10\n10\n",
+      "expected": "100",
+      "visible": true
+    },
+    {
+      "input": "1\n1\n",
+      "expected": "1",
+      "visible": false
+    },
+    {
+      "input": "10000\n10000\n",
+      "expected": "100000000",
+      "visible": false
+    },
+    {
+      "input": "7\n13\n",
+      "expected": "91",
+      "visible": false
+    }
+  ]
+}
