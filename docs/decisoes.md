@@ -75,6 +75,6 @@ O conteúdo piloto está documentado em [Conteúdo e autoria](conteudo.md). A va
 
 ## Próxima evolução após validação no Pages
 
-O responsável conectará o repositório ao GitHub e validará o MVP no GitHub Pages. Depois dessa validação, a próxima evolução deve melhorar a interface, adicionar uma opção de modo noturno e tornar a navegação mais intuitiva, ajudando o aluno a identificar onde está e quais ações pode realizar. Essas alterações ainda não foram iniciadas.
+O responsável conectará o repositório ao GitHub e validará o MVP no GitHub Pages. Depois dessa validação, a próxima evolução deve melhorar a interface, adicionar uma opção de modo noturno e tornar a navegação mais intuitiva, ajudando o aluno a identificar onde está e quais ações pode realizar. As melhorias foram autorizadas após a validação do responsável: tema Sistema/Claro/Noturno, testes de prática em abas com indicadores, painel com abas de resultado e histórico, breadcrumbs e navegação entre exercícios. A implementação e os testes automatizados estão disponíveis; a revisão visual desta evolução em navegador permanece pendente nesta sessão.
 
 A branch principal do projeto é `main`, também usada pelo workflow de publicação.

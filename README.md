@@ -25,10 +25,11 @@ O build estático fica em `dist/`. Use um servidor HTTP para abrir o projeto; n�
 
 - Três exercícios: área de terreno, diferença entre números e soma dos negativos.
 - Editor Python com sintaxe, indentação e numeração de linhas.
-- Testes de prática editáveis e submissão com testes oficiais independentes.
+- Testes de prática em abas, com indicadores de execução, aprovação e falha; submissão com testes oficiais independentes.
 - Python em Worker novo por teste, com cancelamento, limite de tempo e saída.
 - Dicas graduais, rascunhos, histórico das últimas 20 submissões e progresso por versão.
-- Busca, filtro de temas e links diretos por fragmento de URL.
+- Busca, filtro de temas, navegação entre exercícios e links diretos por fragmento de URL.
+- Painel com abas para testes de prática, resultado e histórico, reduzindo a rolagem.
 - Tema automático do sistema, com opções claro e noturno; preferência salva neste navegador.
 
 Os testes ocultos estão escondidos apenas na interface: podem ser inspecionados nos arquivos do site. Não há proteção contra fraude. Seu código é executado no próprio navegador, sem envio a um servidor. Não há limite rígido de memória; execute apenas código que você deseja rodar no seu dispositivo.
@@ -53,4 +54,4 @@ Não foi publicado nesta sessão, pois o repositório local não tem remoto conf
 - [Arquitetura, limites e contratos internos](docs/arquitetura.md).
 - [Conteúdo piloto e como adicionar exercícios](docs/conteudo.md).
 
-Os testes automatizados usam Pyodide real no Node e verificam correção, erros, loops, excesso de saída, cancelamento, isolamento e persistência. Não houve revisão em navegador nesta sessão porque a ferramenta de acesso ao navegador estava indisponível. A revisão visual, o uso em dispositivos móveis e a validação no GitHub Pages publicado permanecem pendentes.
+Os testes automatizados usam Pyodide real no Node e verificam correção, erros, loops, excesso de saída, cancelamento, isolamento e persistência. Os testes DOM também verificam as abas, navegação por teclado, indicadores e edição dos casos; testes de tema cobrem o sistema e a preferência manual. Não houve revisão em navegador nesta sessão porque a ferramenta de acesso ao navegador estava indisponível. A revisão visual, o uso em dispositivos móveis e a validação no GitHub Pages publicado permanecem pendentes.

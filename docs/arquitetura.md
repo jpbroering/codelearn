@@ -61,3 +61,13 @@ O workflow de Pages testa e compila antes de publicar em pushes para `main` ou e
 Os testes de integração executam o mesmo arquivo `public/python-worker.js` com Pyodide real, usando um adaptador para Workers do Node. Esse adaptador substitui o carregamento dos arquivos pelo caminho local da dependência. Ele valida Python, correção, cancelamento e isolamento, mas **não valida as APIs de navegador nem a aparência da interface**.
 
 A sessão não dispõe de navegador na ferramenta de automação. A revisão visual, a interação com CodeMirror em navegador, o teste em dispositivos móveis e a abertura do site efetivamente publicado no GitHub Pages permanecem pendentes. O build e os testes automatizados não devem ser apresentados como substitutos dessas verificações.
+
+## Tema, abas e navegação
+
+A interface inicia com o tema do sistema. A preferência manual (`system`, `light` ou `dark`) usa a chave `codelearn:theme`, independente dos dados de progresso. A opção Sistema acompanha `prefers-color-scheme` em tempo real. O tema é aplicado antes da pintura inicial, e o editor é reconfigurado sem perder o código ou o histórico de edição.
+
+`src/tabs.js` implementa o comportamento de abas com setas, Home, End, seleção e relações ARIA entre abas e painéis. `src/practice-tests.js` mantém os casos editáveis em memória, com apenas um painel visível, adição e remoção e estados individuais. Abas continuam navegáveis enquanto os campos ficam bloqueados durante execução.
+
+O avaliador emite `onCaseResult` após cada caso, já sem dados dos testes ocultos na avaliação oficial. A interface usa esse evento apenas para atualizar os indicadores dos testes de prática. Uma submissão oficial não substitui os resultados dos casos personalizados. Editar um caso limpa seu resultado; editar o código limpa todos os indicadores de prática. A aba Resultado pode continuar exibindo a avaliação anterior, identificada pela mensagem de alteração.
+
+Testes DOM com JSDOM verificam o comportamento das abas e não substituem a revisão visual em navegador. O editor fica em leitura durante a execução, evitando que os resultados sejam atribuídos a um código diferente do efetivamente enviado.

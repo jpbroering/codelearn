@@ -26,6 +26,9 @@ O MVP deve ser acessível online, sem cadastro e sem custo de infraestrutura. O 
 | RF10 | Salvar rascunho, progresso e histórico limitado às últimas 20 submissões por exercício no navegador. |
 | RF11 | Permitir cancelar uma execução e continuar usando o editor após cancelamento, erro ou limite excedido. |
 | RF12 | Permitir adicionar exercícios por arquivos versionados, sem alterar os componentes da interface. |
+| RF13 | Seguir o tema do sistema por padrão e permitir selecionar claro ou noturno, salvando a preferência local. |
+| RF14 | Organizar os testes de prática em abas com cores, símbolos e descrição do estado individual; permitir navegação por teclado e limpar indicadores quando seus dados mudarem. |
+| RF15 | Oferecer navegação entre exercícios e identificação do exercício atual, com testes, resultado e histórico em um painel de abas. |
 
 O catálogo inicial abrangerá entrada e saída, variáveis, operadores, decisões e repetições. A quantidade final e os exercícios serão definidos na etapa de conteúdo piloto.
 
@@ -154,6 +157,11 @@ Uma execução cancelada ou interrompida por falha do ambiente não conta como r
 | CA15 | Comparar saídas com e sem uma quebra final | Aceitar ambas; rejeitar espaços ou linhas extras significativos. |
 | CA16 | Executar testes sucessivos | Não compartilhar estado entre as execuções. |
 | CA17 | Armazenamento indisponível ou runtime sem carregar | Informar a limitação sem perder silenciosamente o trabalho ou atribuir erro ao aluno. |
+| CA18 | Alterar aparência do sistema no modo Sistema | Atualizar interface e editor sem perder o código. |
+| CA19 | Selecionar claro ou noturno e recarregar | Preservar a escolha manual, independentemente do sistema. |
+| CA20 | Alternar abas e editar testes | Preservar os campos de cada caso e mostrar apenas o caso selecionado. |
+| CA21 | Executar testes de prática | Atualizar cada aba durante carregamento, execução e conclusão, com símbolo e descrição além da cor. |
+| CA22 | Editar caso ou código depois de uma execução | Limpar os indicadores afetados e sinalizar que o resultado anterior precisa de nova execução. |
 
 ## 9. Fora do MVP
 

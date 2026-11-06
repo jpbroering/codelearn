@@ -12,16 +12,17 @@
     "validate:content": "node scripts/validate-content.mjs"
   },
   "dependencies": {
-    "@codemirror/lang-python": "^6.2.1",
-    "@codemirror/view": "^6.38.0",
-    "codemirror": "^6.0.2",
-    "pyodide": "0.29.2",
     "@codemirror/commands": "^6.8.0",
-    "@codemirror/state": "^6.5.0",
+    "@codemirror/lang-python": "^6.2.1",
     "@codemirror/language": "^6.11.0",
-    "@lezer/highlight": "^1.2.1"
+    "@codemirror/state": "^6.5.0",
+    "@codemirror/view": "^6.38.0",
+    "@lezer/highlight": "^1.2.1",
+    "codemirror": "^6.0.2",
+    "pyodide": "0.29.2"
   },
   "devDependencies": {
+    "jsdom": "^26.1.0",
     "vite": "^7.2.0"
   }
 }
