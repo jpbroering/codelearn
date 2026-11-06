@@ -29,7 +29,9 @@ O build estático fica em `dist/`. Use um servidor HTTP para abrir o projeto; n�
 - Python em Worker novo por teste, com cancelamento, limite de tempo e saída.
 - Dicas graduais, rascunhos, histórico das últimas 20 submissões e progresso por versão.
 - Busca, filtro de temas, navegação entre exercícios e links diretos por fragmento de URL.
-- Painel com abas para testes de prática, resultado e histórico, reduzindo a rolagem.
+- Workspace fixo no desktop, com rolagem independente no enunciado, editor e painel de testes.
+- Painel com abas para testes de prática, resultado e histórico; ações de executar/enviar sempre acessíveis.
+- Paleta neutra, fontes Inter e JetBrains Mono e cores que distinguem entradas, saídas e estados.
 - Tema automático do sistema, com opções claro e noturno; preferência salva neste navegador.
 
 Os testes ocultos estão escondidos apenas na interface: podem ser inspecionados nos arquivos do site. Não há proteção contra fraude. Seu código é executado no próprio navegador, sem envio a um servidor. Não há limite rígido de memória; execute apenas código que você deseja rodar no seu dispositivo.
@@ -45,7 +47,7 @@ O workflow em `.github/workflows/pages.yml` está preparado para testar, compila
 3. Faça push para `main` ou execute manualmente o workflow **Validar e publicar no GitHub Pages**.
 4. Após sucesso, abra o endereço apresentado pelo job de deploy. Para compartilhar um exercício, copie o endereço completo com `#/exercicio/...`.
 
-Não foi publicado nesta sessão, pois o repositório local não tem remoto configurado. A disponibilidade gratuita depende das condições da sua conta GitHub; o projeto não requer serviços pagos de execução de Python.
+O deploy é disparado pelo envio dos commits para `main`; criar um commit local não publica o site. A disponibilidade gratuita depende das condições da sua conta GitHub; o projeto não requer serviços pagos de execução de Python.
 
 ## Documentação e verificação
 

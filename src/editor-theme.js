@@ -2,8 +2,11 @@ import { EditorView } from '@codemirror/view';
 import { HighlightStyle, syntaxHighlighting } from '@codemirror/language';
 import { tags } from '@lezer/highlight';
 export function editorTheme(dark) {
-  const colors = dark ? { keyword: '#cfb7ff', string: '#b5dba0', number: '#f0c087', comment: '#91a28e', variable: '#e0e8dc', function: '#91cbe8' } : { keyword: '#7044a1', string: '#3b713d', number: '#986020', comment: '#6c7d68', variable: '#253c36', function: '#25627f' };
+  const colors = dark
+    ? { keyword: '#c4a7f5', string: '#d9be8a', number: '#f3a578', comment: '#939cad', variable: '#dde2ef', function: '#89c8ed' }
+    : { keyword: '#8044b5', string: '#9b5825', number: '#a04b20', comment: '#657386', variable: '#263449', function: '#196e9c' };
   return [EditorView.theme({}, { dark }), syntaxHighlighting(HighlightStyle.define([
+    { tag: [tags.operator, tags.punctuation], color: dark ? '#aebbd0' : '#52617a' },
     { tag: tags.keyword, color: colors.keyword },
     { tag: [tags.string, tags.special(tags.string)], color: colors.string },
     { tag: [tags.number, tags.bool, tags.null], color: colors.number },

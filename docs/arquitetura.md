@@ -54,7 +54,7 @@ O build valida os campos mínimos do catálogo e copia os arquivos de runtime. O
 
 O build publicado contém apenas a aplicação e seu runtime. PDFs de referência e soluções Python de referência não são copiados para `dist/`.
 
-O workflow de Pages testa e compila antes de publicar em pushes para `main` ou execução manual. Ele depende de um repositório GitHub configurado com Pages usando GitHub Actions. Nenhuma publicação foi executada nesta sessão: não há remoto configurado.
+O workflow de Pages testa e compila antes de publicar em pushes para `main` ou execução manual. Ele depende de um repositório GitHub configurado com Pages usando GitHub Actions. O deploy é disparado pelo push para `main`; alterações locais precisam ser enviadas ao GitHub para atualizar o site.
 
 ## Verificação e limites da validação
 
@@ -71,3 +71,11 @@ A interface inicia com o tema do sistema. A preferência manual (`system`, `ligh
 O avaliador emite `onCaseResult` após cada caso, já sem dados dos testes ocultos na avaliação oficial. A interface usa esse evento apenas para atualizar os indicadores dos testes de prática. Uma submissão oficial não substitui os resultados dos casos personalizados. Editar um caso limpa seu resultado; editar o código limpa todos os indicadores de prática. A aba Resultado pode continuar exibindo a avaliação anterior, identificada pela mensagem de alteração.
 
 Testes DOM com JSDOM verificam o comportamento das abas e não substituem a revisão visual em navegador. O editor fica em leitura durante a execução, evitando que os resultados sejam atribuídos a um código diferente do efetivamente enviado.
+
+## Identidade visual e uso da janela
+
+A paleta usa superfícies neutras em ambos os temas, azul para navegação e entradas, roxo para saídas e elementos de código, âmbar para restrições e dicas e cores de sucesso/erro para resultados. Os textos usam Inter; código e exemplos usam JetBrains Mono, com alternativas locais. As fontes continuam sendo carregadas pelo Google Fonts quando disponível.
+
+Na rota válida de exercício, `body.is-exercise` ocupa `100dvh`, e o main divide a altura restante entre a barra de ações e o workspace. No desktop, enunciado e coluna de edição têm largura flexível, sem limite central de conteúdo. A coluna direita divide a altura entre editor e testes. `min-height: 0` e áreas de overflow internas evitam que conteúdos longos aumentem a altura da página. O rodapé fica restrito ao catálogo. Avisos de armazenamento continuam visíveis e descontam espaço do workspace.
+
+Em janelas com largura de até 760 px ou altura de até 480 px, o layout usa fluxo vertical para preservar a leitura e o acesso aos controles. A suíte verifica também o contraste mínimo de 4,5:1 das cores de texto da interface nos dois temas. A aparência e o encaixe real nas dimensões do navegador ainda exigem revisão visual; os testes DOM e de contraste não medem layout.

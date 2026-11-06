@@ -2,7 +2,7 @@
 
 ## Estado atual
 
-A documentação foi revisada pelo responsável, que autorizou prosseguir. Os três exercícios piloto e a implementação estática do MVP foram preparados. O build e os testes automatizados são verificáveis pelos comandos do README. A revisão em navegador e a publicação no GitHub Pages permanecem pendentes; não há remoto configurado neste repositório.
+A documentação foi revisada pelo responsável, que autorizou prosseguir. Os três exercícios piloto e a implementação estática do MVP foram preparados. O build e os testes automatizados são verificáveis pelos comandos do README. O responsável configurou o remoto GitHub e validou a publicação no Pages. A revisão visual das novas alterações locais ainda depende de navegador disponível ou de nova publicação.
 
 ## Decisões alinhadas com o responsável
 
@@ -78,3 +78,7 @@ O conteúdo piloto está documentado em [Conteúdo e autoria](conteudo.md). A va
 O responsável conectará o repositório ao GitHub e validará o MVP no GitHub Pages. Depois dessa validação, a próxima evolução deve melhorar a interface, adicionar uma opção de modo noturno e tornar a navegação mais intuitiva, ajudando o aluno a identificar onde está e quais ações pode realizar. As melhorias foram autorizadas após a validação do responsável: tema Sistema/Claro/Noturno, testes de prática em abas com indicadores, painel com abas de resultado e histórico, breadcrumbs e navegação entre exercícios. A implementação e os testes automatizados estão disponíveis; a revisão visual desta evolução em navegador permanece pendente nesta sessão.
 
 A branch principal do projeto é `main`, também usada pelo workflow de publicação.
+
+## Evolução da identidade visual
+
+Após o feedback do responsável, o MVP passou a usar uma paleta neutra, fontes Inter/JetBrains Mono, acentos semânticos em azul e roxo e ícones de traço consistentes. A página do exercício ocupa a janela no desktop, com ações fixas no topo e rolagem independente por painel. Em telas estreitas ou muito baixas, usa fluxo vertical. As regras de execução, o histórico e o tema do sistema permanecem os mesmos.
