@@ -210,7 +210,9 @@ body.is-exercise { height: 100vh; height: 100dvh; display: flex; flex-direction:
 .cm-content { padding: 12px 0 !important; }
 .cm-line { padding: 0 16px !important; }
 .cm-gutters { background: var(--code-bg) !important; color: var(--faint) !important; border: 0 !important; padding-right: 8px; }
-.cm-activeLine, .cm-activeLineGutter { background: var(--code-line) !important; }
+.cm-activeLine { background: var(--code-line) !important; }
+.cm-editor[data-has-selection="true"] .cm-activeLine { background: transparent !important; }
+.cm-activeLineGutter { background: transparent !important; color: var(--text); font-weight: 500; }
 .cm-cursor { border-left-color: var(--text) !important; }
 .cm-selectionBackground { background: var(--selection) !important; }
 .cm-focused { outline: none !important; }
