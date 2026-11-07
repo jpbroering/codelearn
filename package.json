@@ -9,7 +9,8 @@
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test --experimental-test-isolation=none tests/*.test.mjs",
     "predev": "node scripts/prepare-runtime.mjs",
-    "validate:content": "node scripts/validate-content.mjs"
+    "validate:content": "node scripts/validate-content.mjs",
+    "review:content": "node scripts/prepare-proofreading.mjs"
   },
   "dependencies": {
     "@codemirror/commands": "^6.8.0",

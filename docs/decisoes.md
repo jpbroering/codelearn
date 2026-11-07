@@ -82,3 +82,7 @@ A branch principal do projeto é `main`, também usada pelo workflow de publica�
 ## Evolução da identidade visual
 
 Após o feedback do responsável, o MVP passou a usar uma paleta neutra, fontes Inter/JetBrains Mono, acentos semânticos em azul e roxo e ícones de traço consistentes. A página do exercício ocupa a janela no desktop, com ações fixas no topo e rolagem independente por painel. Em telas estreitas ou muito baixas, usa fluxo vertical. As regras de execução, o histórico e o tema do sistema permanecem os mesmos.
+
+## Ampliação para proofreading
+
+O catálogo foi ampliado de 3 para 20 exercícios, mantendo os identificadores e as versões dos três pilotos. Os 17 novos exercícios têm redação própria, exemplos, dicas, casos ocultos e soluções de referência. O snapshot em `docs/revisao-exercicios.md` reúne o material para revisão humana. As soluções são verificadas individualmente no runtime Python; o limite global da suíte foi ajustado ao tamanho do catálogo. A revisão humana dos textos ainda está pendente.
