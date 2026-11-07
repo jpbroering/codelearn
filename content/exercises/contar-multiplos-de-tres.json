@@ -1,0 +1,57 @@
+{
+  "id": "contar-multiplos-de-tres",
+  "title": "Contar múltiplos de três",
+  "topic": "Repetições",
+  "summary": "Conte valores divisíveis por três.",
+  "statement": "Leia N inteiros e conte quantos são múltiplos de 3. Considere zero múltiplo de 3.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Primeira linha: N. Em seguida, N linhas com um inteiro cada.",
+  "outputFormat": "Uma linha com a quantidade de múltiplos de 3.",
+  "constraints": "1 ≤ N ≤ 100; cada valor está entre −1 000 e 1 000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Teste o resto da divisão por 3.",
+    "Aumente o contador quando esse resto for zero."
+  ],
+  "tests": [
+    {
+      "input": "4\n3\n4\n0\n-6\n",
+      "expected": "3",
+      "visible": true
+    },
+    {
+      "input": "1\n2\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "3\n1\n2\n3\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "1\n0\n",
+      "expected": "1",
+      "visible": false
+    },
+    {
+      "input": "3\n-3\n-6\n-9\n",
+      "expected": "3",
+      "visible": false
+    },
+    {
+      "input": "2\n5\n7\n",
+      "expected": "0",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

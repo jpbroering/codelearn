@@ -1,0 +1,56 @@
+{
+  "id": "multiplo-de-cinco",
+  "title": "Múltiplo de cinco",
+  "topic": "Decisões",
+  "summary": "Verifique a divisibilidade de um inteiro.",
+  "statement": "Leia um inteiro e determine se ele é múltiplo de 5. O zero também é múltiplo de 5.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma linha com um inteiro.",
+  "outputFormat": "SIM se for múltiplo de 5; caso contrário, NAO, sem acento.",
+  "constraints": "−1 000 000 ≤ número ≤ 1 000 000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "O operador % calcula o resto da divisão.",
+    "Um múltiplo de 5 tem resto zero ao ser dividido por 5."
+  ],
+  "tests": [
+    {
+      "input": "10\n",
+      "expected": "SIM",
+      "visible": true
+    },
+    {
+      "input": "13\n",
+      "expected": "NAO",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "SIM",
+      "visible": true
+    },
+    {
+      "input": "-5\n",
+      "expected": "SIM",
+      "visible": false
+    },
+    {
+      "input": "-11\n",
+      "expected": "NAO",
+      "visible": false
+    },
+    {
+      "input": "1000000\n",
+      "expected": "SIM",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "comparações"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "quantidade-de-divisores",
+  "title": "Quantidade de divisores",
+  "topic": "Repetições",
+  "summary": "Conte os divisores positivos de um número.",
+  "statement": "Leia um inteiro positivo N e conte quantos inteiros positivos dividem N exatamente, incluindo 1 e o próprio N.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma linha com N inteiro.",
+  "outputFormat": "Uma linha com a quantidade de divisores positivos.",
+  "constraints": "1 ≤ N ≤ 1000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Teste os candidatos de 1 até N.",
+    "Um divisor deixa resto zero em N % candidato."
+  ],
+  "tests": [
+    {
+      "input": "6\n",
+      "expected": "4",
+      "visible": true
+    },
+    {
+      "input": "1\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "7\n",
+      "expected": "2",
+      "visible": true
+    },
+    {
+      "input": "12\n",
+      "expected": "6",
+      "visible": false
+    },
+    {
+      "input": "16\n",
+      "expected": "5",
+      "visible": false
+    },
+    {
+      "input": "1000\n",
+      "expected": "16",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

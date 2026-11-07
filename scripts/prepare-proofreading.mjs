@@ -35,5 +35,5 @@ for (const [index, exercise] of exercises.entries()) {
   );
 }
 
-await writeFile(new URL('../docs/revisao-exercicios.md', import.meta.url), sections.join('\n\n') + '\n');
-console.log(`Roteiro preparado com ${exercises.length} exercícios em docs/revisao-exercicios.md.`);
+await writeFile(new URL('../docs/revisao-validacao-colegas.md', import.meta.url), sections.join('\n\n') + '\n');
+console.log(`Roteiro preparado com ${exercises.length} exercícios em docs/revisao-validacao-colegas.md.`);

@@ -1,0 +1,57 @@
+{
+  "id": "impares-ate-n",
+  "title": "Ímpares até N",
+  "topic": "Repetições",
+  "summary": "Liste os números ímpares de uma faixa.",
+  "statement": "Leia N e mostre os números ímpares de 1 até N, inclusive, em ordem crescente.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma linha com N inteiro.",
+  "outputFormat": "Um número ímpar por linha.",
+  "constraints": "1 ≤ N ≤ 100.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "O primeiro número é 1.",
+    "Avance de 2 em 2 sem ultrapassar N."
+  ],
+  "tests": [
+    {
+      "input": "5\n",
+      "expected": "1\n3\n5",
+      "visible": true
+    },
+    {
+      "input": "1\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "6\n",
+      "expected": "1\n3\n5",
+      "visible": true
+    },
+    {
+      "input": "2\n",
+      "expected": "1",
+      "visible": false
+    },
+    {
+      "input": "9\n",
+      "expected": "1\n3\n5\n7\n9",
+      "visible": false
+    },
+    {
+      "input": "100\n",
+      "expected": "1\n3\n5\n7\n9\n11\n13\n15\n17\n19\n21\n23\n25\n27\n29\n31\n33\n35\n37\n39\n41\n43\n45\n47\n49\n51\n53\n55\n57\n59\n61\n63\n65\n67\n69\n71\n73\n75\n77\n79\n81\n83\n85\n87\n89\n91\n93\n95\n97\n99",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

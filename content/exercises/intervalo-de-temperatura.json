@@ -1,0 +1,56 @@
+{
+  "id": "intervalo-de-temperatura",
+  "title": "Temperatura em faixa",
+  "topic": "Decisões",
+  "summary": "Classifique um valor em três faixas.",
+  "statement": "Leia uma temperatura inteira em graus Celsius. Classifique como FRIO se for menor que 15, AGRADAVEL se estiver entre 15 e 25 inclusive, ou QUENTE se for maior que 25.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma linha com a temperatura inteira.",
+  "outputFormat": "Uma linha com FRIO, AGRADAVEL ou QUENTE, em maiúsculas e sem acento.",
+  "constraints": "−50 ≤ temperatura ≤ 60.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Verifique primeiro se a temperatura é menor que 15.",
+    "Use elif para verificar o limite superior da faixa intermediária."
+  ],
+  "tests": [
+    {
+      "input": "14\n",
+      "expected": "FRIO",
+      "visible": true
+    },
+    {
+      "input": "15\n",
+      "expected": "AGRADAVEL",
+      "visible": true
+    },
+    {
+      "input": "26\n",
+      "expected": "QUENTE",
+      "visible": true
+    },
+    {
+      "input": "25\n",
+      "expected": "AGRADAVEL",
+      "visible": false
+    },
+    {
+      "input": "-50\n",
+      "expected": "FRIO",
+      "visible": false
+    },
+    {
+      "input": "60\n",
+      "expected": "QUENTE",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "comparações"
+  ]
+}

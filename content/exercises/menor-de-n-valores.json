@@ -1,0 +1,57 @@
+{
+  "id": "menor-de-n-valores",
+  "title": "Menor valor",
+  "topic": "Repetições",
+  "summary": "Encontre o menor entre vários valores.",
+  "statement": "Leia N inteiros e mostre o menor deles.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Primeira linha: N. Em seguida, N linhas com um inteiro cada.",
+  "outputFormat": "Uma linha com o menor valor.",
+  "constraints": "1 ≤ N ≤ 100; cada valor está entre −1 000 e 1 000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Use o primeiro valor como menor inicial.",
+    "Compare cada um dos demais valores com o menor encontrado."
+  ],
+  "tests": [
+    {
+      "input": "4\n8\n3\n6\n5\n",
+      "expected": "3",
+      "visible": true
+    },
+    {
+      "input": "1\n-7\n",
+      "expected": "-7",
+      "visible": true
+    },
+    {
+      "input": "3\n4\n4\n4\n",
+      "expected": "4",
+      "visible": true
+    },
+    {
+      "input": "3\n0\n-1\n1\n",
+      "expected": "-1",
+      "visible": false
+    },
+    {
+      "input": "2\n1000\n-1000\n",
+      "expected": "-1000",
+      "visible": false
+    },
+    {
+      "input": "2\n-4\n-8\n",
+      "expected": "-8",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

@@ -1,5 +1,7 @@
 # Revisão dos exercícios
 
+Este roteiro corresponde ao catálogo original, preservado no arquivo; a versão de validação para colegas usa outro conjunto.
+
 Material preparado para proofreading. A revisão humana dos textos ainda está pendente.
 
 Este arquivo é gerado a partir dos JSONs. Registre sugestões por identificador em um documento separado; gerar novamente substitui esta cópia.
@@ -19,26 +21,26 @@ Este arquivo é gerado a partir dos JSONs. Registre sugestões por identificador
 
 | Exercício | Tema | Casos visíveis / ocultos |
 | --- | --- | --- |
-| [Antecessor e sucessor](../content/exercises/antecessor-e-sucessor.json) | Entrada e saída | 3 / 3 |
-| [Área do terreno](../content/exercises/area-do-terreno.json) | Entrada e saída | 3 / 3 |
-| [Conversão de tempo](../content/exercises/conversao-de-tempo.json) | Entrada e saída | 3 / 4 |
-| [Média de três notas](../content/exercises/media-de-tres-notas.json) | Entrada e saída | 3 / 3 |
-| [Perímetro do retângulo](../content/exercises/perimetro-do-retangulo.json) | Entrada e saída | 3 / 3 |
-| [Soma de dois números](../content/exercises/soma-de-dois-numeros.json) | Entrada e saída | 3 / 3 |
-| [Troco da compra](../content/exercises/troco-da-compra.json) | Entrada e saída | 3 / 3 |
-| [Ano bissexto](../content/exercises/ano-bissexto.json) | Decisões | 3 / 6 |
-| [Classificação de triângulos](../content/exercises/classificacao-de-triangulos.json) | Decisões | 3 / 7 |
-| [Diferença entre números](../content/exercises/diferenca-entre-numeros.json) | Decisões | 3 / 3 |
-| [Maior de três números](../content/exercises/maior-de-tres-numeros.json) | Decisões | 3 / 6 |
-| [Par ou ímpar](../content/exercises/par-ou-impar.json) | Decisões | 3 / 3 |
-| [Sinal do número](../content/exercises/sinal-do-numero.json) | Decisões | 3 / 3 |
-| [Situação do aluno](../content/exercises/situacao-do-aluno.json) | Decisões | 3 / 6 |
-| [Contagem de pares](../content/exercises/contagem-de-pares.json) | Repetições | 3 / 3 |
-| [Contagem regressiva](../content/exercises/contagem-regressiva.json) | Repetições | 3 / 3 |
-| [Maior da sequência](../content/exercises/maior-da-sequencia.json) | Repetições | 3 / 3 |
-| [Soma de um até N](../content/exercises/soma-de-um-ate-n.json) | Repetições | 3 / 3 |
-| [Soma dos negativos](../content/exercises/soma-dos-negativos.json) | Repetições | 3 / 3 |
-| [Tabuada](../content/exercises/tabuada.json) | Repetições | 3 / 3 |
+| [Antecessor e sucessor](../content/archive/catalogo-original/exercises/antecessor-e-sucessor.json) | Entrada e saída | 3 / 3 |
+| [Área do terreno](../content/archive/catalogo-original/exercises/area-do-terreno.json) | Entrada e saída | 3 / 3 |
+| [Conversão de tempo](../content/archive/catalogo-original/exercises/conversao-de-tempo.json) | Entrada e saída | 3 / 4 |
+| [Média de três notas](../content/archive/catalogo-original/exercises/media-de-tres-notas.json) | Entrada e saída | 3 / 3 |
+| [Perímetro do retângulo](../content/archive/catalogo-original/exercises/perimetro-do-retangulo.json) | Entrada e saída | 3 / 3 |
+| [Soma de dois números](../content/archive/catalogo-original/exercises/soma-de-dois-numeros.json) | Entrada e saída | 3 / 3 |
+| [Troco da compra](../content/archive/catalogo-original/exercises/troco-da-compra.json) | Entrada e saída | 3 / 3 |
+| [Ano bissexto](../content/archive/catalogo-original/exercises/ano-bissexto.json) | Decisões | 3 / 6 |
+| [Classificação de triângulos](../content/archive/catalogo-original/exercises/classificacao-de-triangulos.json) | Decisões | 3 / 7 |
+| [Diferença entre números](../content/archive/catalogo-original/exercises/diferenca-entre-numeros.json) | Decisões | 3 / 3 |
+| [Maior de três números](../content/archive/catalogo-original/exercises/maior-de-tres-numeros.json) | Decisões | 3 / 6 |
+| [Par ou ímpar](../content/archive/catalogo-original/exercises/par-ou-impar.json) | Decisões | 3 / 3 |
+| [Sinal do número](../content/archive/catalogo-original/exercises/sinal-do-numero.json) | Decisões | 3 / 3 |
+| [Situação do aluno](../content/archive/catalogo-original/exercises/situacao-do-aluno.json) | Decisões | 3 / 6 |
+| [Contagem de pares](../content/archive/catalogo-original/exercises/contagem-de-pares.json) | Repetições | 3 / 3 |
+| [Contagem regressiva](../content/archive/catalogo-original/exercises/contagem-regressiva.json) | Repetições | 3 / 3 |
+| [Maior da sequência](../content/archive/catalogo-original/exercises/maior-da-sequencia.json) | Repetições | 3 / 3 |
+| [Soma de um até N](../content/archive/catalogo-original/exercises/soma-de-um-ate-n.json) | Repetições | 3 / 3 |
+| [Soma dos negativos](../content/archive/catalogo-original/exercises/soma-dos-negativos.json) | Repetições | 3 / 3 |
+| [Tabuada](../content/archive/catalogo-original/exercises/tabuada.json) | Repetições | 3 / 3 |
 
 ## 1. Antecessor e sucessor
 
@@ -114,7 +116,7 @@ Saída esperada:
 1. input() devolve texto. Use int(input()) para ler um inteiro e guarde esse valor para usar nos dois cálculos.
 2. Subtraia 1 para obter o antecessor e some 1 para obter o sucessor. Use um print() para cada linha.
 
-[Enunciado e todos os testes](../content/exercises/antecessor-e-sucessor.json) · [Solução de referência](../content/solutions/antecessor-e-sucessor.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/antecessor-e-sucessor.json) · [Solução de referência](../content/archive/catalogo-original/solutions/antecessor-e-sucessor.py)
 
 ## 2. Área do terreno
 
@@ -190,7 +192,7 @@ Saída esperada:
 1. Leia cada medida com input() e converta o texto para inteiro usando int().
 2. A área de um retângulo é largura × comprimento. Use * para multiplicar.
 
-[Enunciado e todos os testes](../content/exercises/area-do-terreno.json) · [Solução de referência](../content/solutions/area-do-terreno.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/area-do-terreno.json) · [Solução de referência](../content/archive/catalogo-original/solutions/area-do-terreno.py)
 
 ## 3. Conversão de tempo
 
@@ -263,7 +265,7 @@ Saída esperada:
 1. Use // para contar horas completas. O operador % permite encontrar quantos segundos sobraram.
 2. Depois de separar as horas, divida o restante por 60 para obter os minutos e use o resto dessa divisão para os segundos.
 
-[Enunciado e todos os testes](../content/exercises/conversao-de-tempo.json) · [Solução de referência](../content/solutions/conversao-de-tempo.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/conversao-de-tempo.json) · [Solução de referência](../content/archive/catalogo-original/solutions/conversao-de-tempo.py)
 
 ## 4. Média de três notas
 
@@ -342,7 +344,7 @@ Saída esperada:
 1. Some as três notas antes de dividir por 3. Parênteses ajudam a indicar a ordem do cálculo.
 2. Para mostrar duas casas decimais, você pode usar print(f"{media:.2f}").
 
-[Enunciado e todos os testes](../content/exercises/media-de-tres-notas.json) · [Solução de referência](../content/solutions/media-de-tres-notas.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/media-de-tres-notas.json) · [Solução de referência](../content/archive/catalogo-original/solutions/media-de-tres-notas.py)
 
 ## 5. Perímetro do retângulo
 
@@ -418,7 +420,7 @@ Saída esperada:
 1. Um retângulo tem dois lados com a medida da largura e dois com a medida da altura.
 2. Some largura e altura e multiplique essa soma por 2.
 
-[Enunciado e todos os testes](../content/exercises/perimetro-do-retangulo.json) · [Solução de referência](../content/solutions/perimetro-do-retangulo.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/perimetro-do-retangulo.json) · [Solução de referência](../content/archive/catalogo-original/solutions/perimetro-do-retangulo.py)
 
 ## 6. Soma de dois números
 
@@ -494,7 +496,7 @@ Saída esperada:
 1. Cada chamada de input() lê uma linha. Use int() para transformar o texto em inteiro.
 2. O operador + soma dois números. Imprima o resultado com print().
 
-[Enunciado e todos os testes](../content/exercises/soma-de-dois-numeros.json) · [Solução de referência](../content/solutions/soma-de-dois-numeros.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/soma-de-dois-numeros.json) · [Solução de referência](../content/archive/catalogo-original/solutions/soma-de-dois-numeros.py)
 
 ## 7. Troco da compra
 
@@ -570,7 +572,7 @@ Saída esperada:
 1. As duas entradas já usam a mesma unidade: centavos. Não é necessário dividir por 100.
 2. O troco é o valor pago menos o preço total.
 
-[Enunciado e todos os testes](../content/exercises/troco-da-compra.json) · [Solução de referência](../content/solutions/troco-da-compra.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/troco-da-compra.json) · [Solução de referência](../content/archive/catalogo-original/solutions/troco-da-compra.py)
 
 ## 8. Ano bissexto
 
@@ -643,7 +645,7 @@ BISSEXTO
 1. Use % para descobrir se a divisão por cada um dos três números deixa resto zero.
 2. A divisibilidade por 400 é suficiente. Nos demais casos, o ano precisa ser divisível por 4 e não ser divisível por 100.
 
-[Enunciado e todos os testes](../content/exercises/ano-bissexto.json) · [Solução de referência](../content/solutions/ano-bissexto.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/ano-bissexto.json) · [Solução de referência](../content/archive/catalogo-original/solutions/ano-bissexto.py)
 
 ## 9. Classificação de triângulos
 
@@ -722,7 +724,7 @@ ESCALENO
 1. Verifique as três somas: a + b > c, a + c > b e b + c > a. Uma igualdade não é suficiente.
 2. Depois de validar o triângulo, teste primeiro se todos os lados são iguais. Em seguida, procure um par de lados iguais.
 
-[Enunciado e todos os testes](../content/exercises/classificacao-de-triangulos.json) · [Solução de referência](../content/solutions/classificacao-de-triangulos.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/classificacao-de-triangulos.json) · [Solução de referência](../content/archive/catalogo-original/solutions/classificacao-de-triangulos.py)
 
 ## 10. Diferença entre números
 
@@ -798,7 +800,7 @@ Saída esperada:
 1. Compare os dois números usando if e else.
 2. Se a for maior que b, calcule a - b; caso contrário, calcule b - a.
 
-[Enunciado e todos os testes](../content/exercises/diferenca-entre-numeros.json) · [Solução de referência](../content/solutions/diferenca-entre-numeros.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/diferenca-entre-numeros.json) · [Solução de referência](../content/archive/catalogo-original/solutions/diferenca-entre-numeros.py)
 
 ## 11. Maior de três números
 
@@ -877,7 +879,7 @@ Saída esperada:
 1. Comece considerando o primeiro valor como o maior. Assim, valores negativos também serão tratados corretamente.
 2. Compare o segundo e o terceiro com o maior guardado e atualize a variável quando encontrar um valor maior.
 
-[Enunciado e todos os testes](../content/exercises/maior-de-tres-numeros.json) · [Solução de referência](../content/solutions/maior-de-tres-numeros.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/maior-de-tres-numeros.json) · [Solução de referência](../content/archive/catalogo-original/solutions/maior-de-tres-numeros.py)
 
 ## 12. Par ou ímpar
 
@@ -950,7 +952,7 @@ PAR
 1. O operador % calcula o resto de uma divisão.
 2. Compare numero % 2 com zero e escolha a mensagem com if e else.
 
-[Enunciado e todos os testes](../content/exercises/par-ou-impar.json) · [Solução de referência](../content/solutions/par-ou-impar.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/par-ou-impar.json) · [Solução de referência](../content/archive/catalogo-original/solutions/par-ou-impar.py)
 
 ## 13. Sinal do número
 
@@ -1023,7 +1025,7 @@ ZERO
 1. Há três possibilidades que não se sobrepõem: maior que zero, menor que zero e igual a zero.
 2. Você pode testar os sinais com if e elif e reservar o else para o zero.
 
-[Enunciado e todos os testes](../content/exercises/sinal-do-numero.json) · [Solução de referência](../content/solutions/sinal-do-numero.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/sinal-do-numero.json) · [Solução de referência](../content/archive/catalogo-original/solutions/sinal-do-numero.py)
 
 ## 14. Situação do aluno
 
@@ -1096,7 +1098,7 @@ REPROVADO
 1. Teste primeiro a faixa mais alta: notas maiores ou iguais a 70.
 2. Se a nota não entrou na primeira faixa, teste se ela é maior ou igual a 50. O restante corresponde à reprovação.
 
-[Enunciado e todos os testes](../content/exercises/situacao-do-aluno.json) · [Solução de referência](../content/solutions/situacao-do-aluno.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/situacao-do-aluno.json) · [Solução de referência](../content/archive/catalogo-original/solutions/situacao-do-aluno.py)
 
 ## 15. Contagem de pares
 
@@ -1181,7 +1183,7 @@ Saída esperada:
 1. Use um contador que começa em zero e faça exatamente N leituras dentro de um laço.
 2. Aumente o contador somente quando o resto da divisão do valor por 2 for zero.
 
-[Enunciado e todos os testes](../content/exercises/contagem-de-pares.json) · [Solução de referência](../content/solutions/contagem-de-pares.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/contagem-de-pares.json) · [Solução de referência](../content/archive/catalogo-original/solutions/contagem-de-pares.py)
 
 ## 16. Contagem regressiva
 
@@ -1258,7 +1260,7 @@ Saída esperada:
 1. Um laço while pode continuar enquanto o valor atual for maior ou igual a zero.
 2. Imprima o valor atual e depois diminua-o em 1. Não se esqueça de incluir o zero na saída.
 
-[Enunciado e todos os testes](../content/exercises/contagem-regressiva.json) · [Solução de referência](../content/solutions/contagem-regressiva.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/contagem-regressiva.json) · [Solução de referência](../content/archive/catalogo-original/solutions/contagem-regressiva.py)
 
 ## 17. Maior da sequência
 
@@ -1339,7 +1341,7 @@ Saída esperada:
 1. Leia o primeiro valor como maior inicial. Depois, faltam N - 1 leituras.
 2. Compare cada novo valor com o maior atual e atualize apenas quando o novo valor for maior.
 
-[Enunciado e todos os testes](../content/exercises/maior-da-sequencia.json) · [Solução de referência](../content/solutions/maior-da-sequencia.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/maior-da-sequencia.json) · [Solução de referência](../content/archive/catalogo-original/solutions/maior-da-sequencia.py)
 
 ## 18. Soma de um até N
 
@@ -1412,7 +1414,7 @@ Saída esperada:
 1. Inicie a soma com zero antes do laço.
 2. Percorra range(1, n + 1) para incluir N. Se N for zero, esse laço não terá repetições.
 
-[Enunciado e todos os testes](../content/exercises/soma-de-um-ate-n.json) · [Solução de referência](../content/solutions/soma-de-um-ate-n.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/soma-de-um-ate-n.json) · [Solução de referência](../content/archive/catalogo-original/solutions/soma-de-um-ate-n.py)
 
 ## 19. Soma dos negativos
 
@@ -1512,7 +1514,7 @@ Saída esperada:
 1. Comece com uma variável acumuladora igual a zero e use um laço com dez repetições.
 2. A cada leitura, some o número ao acumulador somente se ele for menor que zero.
 
-[Enunciado e todos os testes](../content/exercises/soma-dos-negativos.json) · [Solução de referência](../content/solutions/soma-dos-negativos.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/soma-dos-negativos.json) · [Solução de referência](../content/archive/catalogo-original/solutions/soma-dos-negativos.py)
 
 ## 20. Tabuada
 
@@ -1612,4 +1614,4 @@ Saída esperada:
 1. range(1, 11) gera os multiplicadores de 1 até 10; o limite final não é incluído.
 2. Dentro do laço, calcule o produto e monte a linha com uma f-string, respeitando os espaços pedidos.
 
-[Enunciado e todos os testes](../content/exercises/tabuada.json) · [Solução de referência](../content/solutions/tabuada.py)
+[Enunciado e todos os testes](../content/archive/catalogo-original/exercises/tabuada.json) · [Solução de referência](../content/archive/catalogo-original/solutions/tabuada.py)

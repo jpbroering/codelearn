@@ -1,0 +1,57 @@
+{
+  "id": "pares-ate-n",
+  "title": "Pares até N",
+  "topic": "Repetições",
+  "summary": "Liste os números pares de uma faixa.",
+  "statement": "Leia N e mostre os números pares de 2 até N, inclusive, em ordem crescente.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma linha com N inteiro.",
+  "outputFormat": "Um número par por linha.",
+  "constraints": "2 ≤ N ≤ 100.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Comece em 2.",
+    "Avance de 2 em 2 ou verifique o resto da divisão."
+  ],
+  "tests": [
+    {
+      "input": "6\n",
+      "expected": "2\n4\n6",
+      "visible": true
+    },
+    {
+      "input": "2\n",
+      "expected": "2",
+      "visible": true
+    },
+    {
+      "input": "7\n",
+      "expected": "2\n4\n6",
+      "visible": true
+    },
+    {
+      "input": "3\n",
+      "expected": "2",
+      "visible": false
+    },
+    {
+      "input": "10\n",
+      "expected": "2\n4\n6\n8\n10",
+      "visible": false
+    },
+    {
+      "input": "100\n",
+      "expected": "2\n4\n6\n8\n10\n12\n14\n16\n18\n20\n22\n24\n26\n28\n30\n32\n34\n36\n38\n40\n42\n44\n46\n48\n50\n52\n54\n56\n58\n60\n62\n64\n66\n68\n70\n72\n74\n76\n78\n80\n82\n84\n86\n88\n90\n92\n94\n96\n98\n100",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

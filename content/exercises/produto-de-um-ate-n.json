@@ -1,0 +1,57 @@
+{
+  "id": "produto-de-um-ate-n",
+  "title": "Produto de 1 até N",
+  "topic": "Repetições",
+  "summary": "Calcule um produto usando acumulador.",
+  "statement": "Leia N e calcule o produto dos inteiros de 1 até N, inclusive. Para N igual a zero, o produto é 1.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma linha com N inteiro.",
+  "outputFormat": "Uma linha com o produto inteiro.",
+  "constraints": "0 ≤ N ≤ 10.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Comece o acumulador em 1.",
+    "Multiplique o acumulador por cada número de 1 até N."
+  ],
+  "tests": [
+    {
+      "input": "4\n",
+      "expected": "24",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "1\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "3\n",
+      "expected": "6",
+      "visible": false
+    },
+    {
+      "input": "5\n",
+      "expected": "120",
+      "visible": false
+    },
+    {
+      "input": "10\n",
+      "expected": "3628800",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "contagem-ate-negativo",
+  "title": "Contagem até negativo",
+  "topic": "Repetições",
+  "summary": "Conte leituras até uma sentinela.",
+  "statement": "Leia inteiros até encontrar um número negativo. Conte quantos valores não negativos foram lidos antes dele; o valor negativo não entra na contagem.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma sequência de inteiros, um por linha, terminada por um número negativo.",
+  "outputFormat": "Uma linha com a contagem.",
+  "constraints": "Há no máximo 100 valores antes da sentinela; valores entre −1 000 e 1 000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "O valor negativo encerra a repetição.",
+    "Conte cada valor maior ou igual a zero antes de ler o próximo."
+  ],
+  "tests": [
+    {
+      "input": "3\n0\n8\n-1\n",
+      "expected": "3",
+      "visible": true
+    },
+    {
+      "input": "-5\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "0\n-1\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "1\n2\n-2\n",
+      "expected": "2",
+      "visible": false
+    },
+    {
+      "input": "1000\n-1000\n",
+      "expected": "1",
+      "visible": false
+    },
+    {
+      "input": "0\n0\n0\n-1\n",
+      "expected": "3",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

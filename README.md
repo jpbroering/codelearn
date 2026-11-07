@@ -23,7 +23,7 @@ O build estático fica em `dist/`. Use um servidor HTTP para abrir o projeto; n�
 
 ## O que está disponível
 
-- 20 exercícios básicos: 7 de entrada e saída, 7 de decisões e 6 de repetições.
+- 20 exercícios para validação: 5 de decisões e 15 de repetições.
 - Editor Python com sintaxe, indentação e numeração de linhas.
 - Testes de prática em abas, com indicadores de execução, aprovação e falha; submissão com testes oficiais independentes.
 - Python em Worker novo por teste, com cancelamento, limite de tempo e saída.
@@ -56,6 +56,7 @@ O deploy é disparado pelo envio dos commits para `main`; criar um commit local 
 - [Arquitetura, limites e contratos internos](docs/arquitetura.md).
 - [Conteúdo e como adicionar exercícios](docs/conteudo.md).
 - [Correções das auditorias e roteiro de validação funcional](docs/correcoes-ux.md).
-- [Material para proofreading dos 20 exercícios](docs/revisao-exercicios.md), gerado com `npm run review:content`.
+- [Material para proofreading dos exercícios de validação](docs/revisao-validacao-colegas.md), gerado com `npm run review:content`.
+- [Roteiro do catálogo original](docs/revisao-exercicios.md), preservado para revisão.
 
 Os testes automatizados usam Pyodide real no Node e verificam correção, erros, loops, excesso de saída, cancelamento, isolamento e persistência. Os testes DOM também verificam as abas, navegação por teclado, indicadores e edição dos casos; testes de tema cobrem o sistema e a preferência manual. Não houve revisão em navegador nesta sessão porque a ferramenta de acesso ao navegador estava indisponível. A revisão visual, o uso em dispositivos móveis e a validação no GitHub Pages publicado permanecem pendentes.

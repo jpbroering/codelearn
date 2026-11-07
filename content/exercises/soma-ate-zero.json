@@ -1,0 +1,57 @@
+{
+  "id": "soma-ate-zero",
+  "title": "Soma até zero",
+  "topic": "Repetições",
+  "summary": "Use uma sentinela para encerrar leituras.",
+  "statement": "Leia inteiros até encontrar zero. Some os valores anteriores ao zero. O zero encerra a leitura e não precisa ser somado.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma sequência de inteiros, um por linha, terminada por zero.",
+  "outputFormat": "Uma linha com a soma dos valores anteriores ao zero.",
+  "constraints": "Há no máximo 100 valores antes do zero; cada um está entre −1 000 e 1 000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Leia um valor antes de verificar a condição.",
+    "Enquanto o valor for diferente de zero, acumule e leia o próximo."
+  ],
+  "tests": [
+    {
+      "input": "3\n5\n0\n",
+      "expected": "8",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "-2\n4\n0\n",
+      "expected": "2",
+      "visible": true
+    },
+    {
+      "input": "1\n-1\n0\n",
+      "expected": "0",
+      "visible": false
+    },
+    {
+      "input": "1000\n0\n",
+      "expected": "1000",
+      "visible": false
+    },
+    {
+      "input": "-10\n-20\n0\n",
+      "expected": "-30",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

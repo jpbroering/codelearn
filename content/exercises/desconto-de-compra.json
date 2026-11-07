@@ -1,0 +1,56 @@
+{
+  "id": "desconto-de-compra",
+  "title": "Desconto de compra",
+  "topic": "Decisões",
+  "summary": "Aplique um desconto fixo a compras elegíveis.",
+  "statement": "Uma loja concede desconto de 10 centavos para compras a partir de 100 centavos. Leia o valor da compra e calcule quanto será pago.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma linha com o valor inteiro em centavos.",
+  "outputFormat": "Uma linha com o valor final em centavos, sem símbolo de moeda.",
+  "constraints": "0 ≤ valor ≤ 100 000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Compare o valor com 100.",
+    "Subtraia 10 apenas quando a condição for verdadeira."
+  ],
+  "tests": [
+    {
+      "input": "100\n",
+      "expected": "90",
+      "visible": true
+    },
+    {
+      "input": "99\n",
+      "expected": "99",
+      "visible": true
+    },
+    {
+      "input": "250\n",
+      "expected": "240",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "0",
+      "visible": false
+    },
+    {
+      "input": "100000\n",
+      "expected": "99990",
+      "visible": false
+    },
+    {
+      "input": "101\n",
+      "expected": "91",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "comparações"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "acesso-ao-evento",
+  "title": "Acesso ao evento",
+  "topic": "Decisões",
+  "summary": "Decida se uma pessoa tem idade para entrar.",
+  "statement": "Uma atividade aceita pessoas com 16 anos ou mais. Leia a idade e informe se a entrada é permitida.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Uma linha com a idade inteira.",
+  "outputFormat": "PERMITIDA se a idade for pelo menos 16; caso contrário, NEGADA.",
+  "constraints": "0 ≤ idade ≤ 120.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Compare a idade com o limite usando >=.",
+    "Use if e else para escolher uma das duas mensagens."
+  ],
+  "tests": [
+    {
+      "input": "16\n",
+      "expected": "PERMITIDA",
+      "visible": true
+    },
+    {
+      "input": "15\n",
+      "expected": "NEGADA",
+      "visible": true
+    },
+    {
+      "input": "30\n",
+      "expected": "PERMITIDA",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "NEGADA",
+      "visible": false
+    },
+    {
+      "input": "120\n",
+      "expected": "PERMITIDA",
+      "visible": false
+    },
+    {
+      "input": "17\n",
+      "expected": "PERMITIDA",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "comparações"
+  ]
+}

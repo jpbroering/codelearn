@@ -1,0 +1,57 @@
+{
+  "id": "soma-de-intervalo",
+  "title": "Soma de intervalo",
+  "topic": "Repetições",
+  "summary": "Acumule os valores de um intervalo.",
+  "statement": "Leia A e B e calcule a soma de todos os inteiros de A até B, incluindo os extremos.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Duas linhas: A e depois B.",
+  "outputFormat": "Uma linha com a soma inteira.",
+  "constraints": "−100 ≤ A ≤ B ≤ 100.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Comece a soma em zero.",
+    "Para cada número do intervalo, acrescente-o ao acumulador."
+  ],
+  "tests": [
+    {
+      "input": "1\n4\n",
+      "expected": "10",
+      "visible": true
+    },
+    {
+      "input": "-2\n2\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "5\n5\n",
+      "expected": "5",
+      "visible": true
+    },
+    {
+      "input": "-5\n-2\n",
+      "expected": "-14",
+      "visible": false
+    },
+    {
+      "input": "0\n1\n",
+      "expected": "1",
+      "visible": false
+    },
+    {
+      "input": "-100\n100\n",
+      "expected": "0",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

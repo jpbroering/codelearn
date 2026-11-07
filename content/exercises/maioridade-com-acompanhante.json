@@ -1,0 +1,56 @@
+{
+  "id": "maioridade-com-acompanhante",
+  "title": "Entrada acompanhada",
+  "topic": "Decisões",
+  "summary": "Combine duas condições para permitir uma entrada.",
+  "statement": "Uma pessoa pode entrar se tiver pelo menos 18 anos ou se estiver acompanhada por um responsável. Leia a idade e a indicação de acompanhamento.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Duas linhas: idade inteira e, depois, 1 se acompanhada ou 0 caso contrário.",
+  "outputFormat": "PERMITIDA se uma das condições permitir a entrada; caso contrário, NEGADA.",
+  "constraints": "0 ≤ idade ≤ 120; acompanhamento é 0 ou 1.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Basta uma das duas condições ser verdadeira.",
+    "Combine as comparações com or."
+  ],
+  "tests": [
+    {
+      "input": "17\n0\n",
+      "expected": "NEGADA",
+      "visible": true
+    },
+    {
+      "input": "17\n1\n",
+      "expected": "PERMITIDA",
+      "visible": true
+    },
+    {
+      "input": "18\n0\n",
+      "expected": "PERMITIDA",
+      "visible": true
+    },
+    {
+      "input": "0\n1\n",
+      "expected": "PERMITIDA",
+      "visible": false
+    },
+    {
+      "input": "0\n0\n",
+      "expected": "NEGADA",
+      "visible": false
+    },
+    {
+      "input": "120\n1\n",
+      "expected": "PERMITIDA",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "comparações"
+  ]
+}

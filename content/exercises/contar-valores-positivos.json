@@ -1,0 +1,57 @@
+{
+  "id": "contar-valores-positivos",
+  "title": "Contar positivos",
+  "topic": "Repetições",
+  "summary": "Conte valores positivos em uma sequência.",
+  "statement": "Leia N inteiros e conte quantos são maiores que zero. Zero não é positivo.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Primeira linha: N. Em seguida, N linhas com um inteiro cada.",
+  "outputFormat": "Uma linha com a quantidade de valores positivos.",
+  "constraints": "1 ≤ N ≤ 100; cada valor está entre −1 000 e 1 000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Use uma variável contadora iniciada em zero.",
+    "Incremente a contagem apenas quando o valor for maior que zero."
+  ],
+  "tests": [
+    {
+      "input": "4\n2\n0\n-1\n5\n",
+      "expected": "2",
+      "visible": true
+    },
+    {
+      "input": "1\n0\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "3\n1\n2\n3\n",
+      "expected": "3",
+      "visible": true
+    },
+    {
+      "input": "2\n-2\n-1\n",
+      "expected": "0",
+      "visible": false
+    },
+    {
+      "input": "1\n7\n",
+      "expected": "1",
+      "visible": false
+    },
+    {
+      "input": "4\n0\n-3\n0\n1\n",
+      "expected": "1",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

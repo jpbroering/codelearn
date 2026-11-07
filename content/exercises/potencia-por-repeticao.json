@@ -1,0 +1,57 @@
+{
+  "id": "potencia-por-repeticao",
+  "title": "Potência por repetição",
+  "topic": "Repetições",
+  "summary": "Multiplique uma base repetidamente.",
+  "statement": "Leia uma base inteira e um expoente inteiro não negativo. Calcule a potência multiplicando a base por ela mesma a quantidade de vezes indicada pelo expoente. Qualquer base elevada a zero resulta em 1, inclusive zero.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Duas linhas: base e depois expoente.",
+  "outputFormat": "Uma linha com o resultado inteiro.",
+  "constraints": "−10 ≤ base ≤ 10; 0 ≤ expoente ≤ 6.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Inicie o resultado com 1.",
+    "Repita a multiplicação pela base expoente vezes."
+  ],
+  "tests": [
+    {
+      "input": "2\n3\n",
+      "expected": "8",
+      "visible": true
+    },
+    {
+      "input": "-2\n3\n",
+      "expected": "-8",
+      "visible": true
+    },
+    {
+      "input": "0\n0\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "5\n0\n",
+      "expected": "1",
+      "visible": false
+    },
+    {
+      "input": "0\n4\n",
+      "expected": "0",
+      "visible": false
+    },
+    {
+      "input": "-2\n4\n",
+      "expected": "16",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}

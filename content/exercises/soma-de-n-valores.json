@@ -1,0 +1,57 @@
+{
+  "id": "soma-de-n-valores",
+  "title": "Soma de N valores",
+  "topic": "Repetições",
+  "summary": "Leia vários valores e calcule a soma.",
+  "statement": "Leia uma quantidade N e, em seguida, N inteiros. Calcule a soma dos valores lidos.",
+  "version": 1,
+  "difficulty": "Básico",
+  "inputFormat": "Primeira linha: N. Em seguida, N linhas com um inteiro cada.",
+  "outputFormat": "Uma linha com a soma.",
+  "constraints": "1 ≤ N ≤ 100; cada valor está entre −1 000 e 1 000.",
+  "starter": "# Escreva sua solução aqui.\n",
+  "hints": [
+    "Leia N antes de iniciar a repetição.",
+    "Repita a leitura N vezes e acumule cada valor."
+  ],
+  "tests": [
+    {
+      "input": "3\n2\n4\n6\n",
+      "expected": "12",
+      "visible": true
+    },
+    {
+      "input": "1\n-5\n",
+      "expected": "-5",
+      "visible": true
+    },
+    {
+      "input": "4\n1\n-1\n2\n-2\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "2\n0\n0\n",
+      "expected": "0",
+      "visible": false
+    },
+    {
+      "input": "3\n-1\n-2\n-3\n",
+      "expected": "-6",
+      "visible": false
+    },
+    {
+      "input": "2\n1000\n1000\n",
+      "expected": "2000",
+      "visible": false
+    }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "if/elif/else",
+    "laços de repetição",
+    "contadores e acumuladores"
+  ]
+}
