@@ -1,3 +1,4 @@
+import { safeCaseResult } from './diagnostics.js';
 const prefix = 'codelearn:v1:';
 const historyLimit = 20;
 
@@ -31,6 +32,13 @@ export function createStore(storage, onError = () => {}) {
 
       const record = JSON.parse(raw);
       if (!validRecord(record)) throw Error('Dados inválidos');
+      for (const submission of record.history) {
+        if (submission.diagnostic !== undefined) {
+          const diagnostic = safeCaseResult(submission.diagnostic);
+          if (diagnostic) submission.diagnostic = diagnostic;
+          else delete submission.diagnostic;
+        }
+      }
       return record;
     } catch {
       onError();
@@ -54,13 +62,17 @@ export function createStore(storage, onError = () => {}) {
   };
 }
 
-export function addSubmission(record, exercise, code, status, date = new Date().toISOString()) {
+export function addSubmission(record, exercise, code, status, date = new Date().toISOString(), evaluation = null) {
   if (['cancelled', 'environment-error'].includes(status)) return record;
 
+  const failure = evaluation?.results?.find(result => result.status !== 'accepted');
+  const diagnostic = safeCaseResult(failure);
+  const submission = { date, code, version: exercise.version, status };
+  if (diagnostic) submission.diagnostic = diagnostic;
   return {
     ...record,
     passedVersion: status === 'accepted' ? exercise.version : record.passedVersion,
-    history: [{ date, code, version: exercise.version, status }, ...record.history].slice(0, historyLimit),
+    history: [submission, ...record.history].slice(0, historyLimit),
   };
 }
 

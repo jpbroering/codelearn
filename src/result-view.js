@@ -1,12 +1,28 @@
-import { labels } from './evaluator.js';
+import { explainError } from './diagnostics.js';
+import { normalize, labels } from './evaluator.js';
 import { escapeHtml } from './html.js';
+
+export function differenceMarkup(actual, expected) {
+  const a = normalize(actual).split('\n'), e = normalize(expected).split('\n');
+  const index = Array.from({ length: Math.max(a.length, e.length) }, (_, i) => i).find(i => a[i] !== e[i]);
+  if (index === undefined) return '';
+  const describe = value => value === undefined ? '(linha ausente)' : value === '' ? '(linha vazia)' : JSON.stringify(value);
+  return `<p class="failure">Linha ${index + 1}: esperado ${escapeHtml(describe(e[index]))}, obtido ${escapeHtml(describe(a[index]))}. Espaços e tabulações aparecem entre aspas.</p>`;
+}
+
+export function diagnosticMarkup(result) {
+  if (result.hidden) return '';
+  const hint = result.error ? `<p>${escapeHtml(explainError(result.errorType, result.error))}${result.errorLine ? ` Linha ${result.errorLine}.` : ''}</p><pre class="error">${escapeHtml(result.error)}</pre>` : '';
+  const diff = result.status === 'wrong-answer' ? differenceMarkup(result.output ?? '', result.expected ?? '') : '';
+  return hint + diff;
+}
 
 function caseOutputMarkup(result) {
   if (result.hidden) {
-    return '<p>Os dados deste caso não são exibidos. Revise as restrições e consulte as dicas.</p>';
+    return '<p>Este é um caso adicional cuja entrada não é mostrada, para verificar outras situações. Os dados deste caso não são exibidos. Revise as restrições e consulte as dicas.</p>';
   }
 
-  const error = result.error ? `<pre class="error">${escapeHtml(result.error)}</pre>` : '';
+  const error = diagnosticMarkup(result);
   return `<div class="result-data"><div><small class="input-label">ENTRADA</small><pre>${escapeHtml(result.input)}</pre></div><div><small>ESPERADO</small><pre>${escapeHtml(result.expected)}</pre></div><div><small>OBTIDO</small><pre>${escapeHtml(result.output)}</pre></div></div>${error}`;
 }
 
@@ -25,7 +41,7 @@ export function resultMarkup(result, official) {
   const tone = accepted ? 'success' : 'failure';
   const symbol = accepted ? '✓' : '✕';
   const description = official
-    ? 'Avaliação oficial. A submissão encerra na primeira falha.'
+    ? 'Avaliação oficial. A submissão encerra na primeira falha. Enviar verifica os casos do exercício e registra a resolução.'
     : 'Testes de prática. Consulte cada caso em sua aba. Para registrar a resolução, envie a solução.';
   const environmentError = result.status === 'environment-error'
     ? '<p>Não foi possível preparar o Python. Verifique sua conexão e tente novamente. Seu código permanece no editor.</p>'

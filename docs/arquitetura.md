@@ -83,3 +83,7 @@ Na rota válida de exercício, `body.is-exercise` ocupa `100dvh`, e o main divid
 Em janelas com largura de até 760 px ou altura de até 480 px, o layout usa fluxo vertical para preservar a leitura e o acesso aos controles. A suíte verifica também o contraste mínimo de 4,5:1 das cores de texto da interface nos dois temas. A aparência e o encaixe real nas dimensões do navegador ainda exigem revisão visual; os testes DOM e de contraste não medem layout.
 
 O tema do editor deriva `data-has-selection` das seleções do CodeMirror. Quando algum intervalo contém texto, o fundo da linha ativa fica transparente para não cobrir a seleção desenhada atrás do código. O número da linha ativa usa cor de texto e peso próprios, sem fundo. Testes DOM cobrem seleção, retorno ao cursor e troca de tema; a revisão visual continua dependendo de um navegador.
+
+## Diagnósticos da rodada de UX
+
+O Worker acrescenta `errorType` e `errorLine` opcionais às falhas de Python. O avaliador e o histórico usam a allowlist de `safeCaseResult`: casos ocultos perdem todos os detalhes, e casos visíveis mantêm a mensagem técnica, tipo e linha. O campo opcional `diagnostic` do histórico guarda somente a primeira falha. Registros antigos continuam válidos; diagnósticos opcionais inválidos são descartados sem apagar o registro. A interface oferece orientação local em português e a primeira linha divergente, usando a normalização do avaliador. Consulte `correcoes-ux.md` para rastreabilidade e validação manual pendente.

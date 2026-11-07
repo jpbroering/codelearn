@@ -29,6 +29,13 @@ except OutputLimit:
     result['status'] = 'output-limit'
 except BaseException as error:
     result['status'] = 'runtime-error'
+    result['errorType'] = type(error).__name__
+    frames = traceback.extract_tb(error.__traceback__)
+    lines = [frame.lineno for frame in frames if frame.filename == '<solucao>']
+    if isinstance(error, SyntaxError) and error.filename == '<solucao>':
+        result['errorLine'] = error.lineno
+    elif lines:
+        result['errorLine'] = lines[-1]
     result['error'] = ''.join(traceback.format_exception_only(type(error), error))[:2000]
 finally:
     sys.stdin, sys.stdout, sys.stderr = old_streams

@@ -1,3 +1,4 @@
+import { safeCaseResult } from './diagnostics.js';
 import { execute } from './executor.js';
 export function normalize(output) {
   return output.replace(/\r\n?/g, '\n').replace(/\n$/, '');
@@ -19,13 +20,12 @@ export async function evaluate(code, tests, { official = false, run = execute, o
     }
 
     // Não encaminhar saídas nem mensagens de erro de casos ocultos para a interface/histórico.
-    const caseResult = official && !test.visible
-      ? { index, hidden: true, status }
-      : {
-          index, hidden: false, status,
-          input: test.input, expected: test.expected,
-          output: result.output ?? '', error: result.error ?? '',
-        };
+    const caseResult = safeCaseResult({
+      index, hidden: Boolean(official && !test.visible), status,
+      input: test.input, expected: test.expected,
+      output: result.output ?? '', error: result.error ?? '',
+      errorType: result.errorType, errorLine: result.errorLine,
+    });
     results.push(caseResult);
     onCaseResult(caseResult);
 

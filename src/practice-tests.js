@@ -1,3 +1,4 @@
+import { diagnosticMarkup } from './result-view.js';
 import { createTabs } from './tabs.js';
 export const MAX_CASES = 20;
 const states = {
@@ -44,7 +45,9 @@ export function createPracticeTests(root, initialCases, { onChange = () => {} } 
     output.hidden = !test.result;
     if (test.result) {
       output.append(element('h3', null, 'Saída obtida'), element('pre', null, test.result.output || '(sem saída)'));
-      if (test.result.error) output.append(element('pre', 'error', test.result.error));
+      const diagnostic = element('div');
+      diagnostic.innerHTML = diagnosticMarkup(test.result);
+      output.append(diagnostic);
       if (test.result.status === 'environment-error') output.append(element('p', null, 'Não foi possível preparar o Python. Verifique a conexão e tente novamente.'));
     }
   }
