@@ -1,0 +1,49 @@
+{
+  "id": "media-de-tres-notas",
+  "version": 1,
+  "title": "Média de três notas",
+  "topic": "Entrada e saída",
+  "difficulty": "Básico",
+  "summary": "Calcule uma média aritmética e formate a resposta com duas casas decimais.",
+  "statement": "Uma atividade tem três notas inteiras, todas com o mesmo peso. Leia as notas e calcule a média aritmética: a soma das notas dividida por três.",
+  "inputFormat": "Três linhas, cada uma contendo uma nota inteira de 0 a 100.",
+  "outputFormat": "Uma linha com a média, usando ponto como separador decimal e exatamente duas casas decimais, com arredondamento. Por exemplo, a média 8 deve aparecer como 8.00.",
+  "constraints": "0 ≤ cada nota ≤ 100.",
+  "starter": "# Leia três notas e calcule a média.\n",
+  "hints": [
+    "Some as três notas antes de dividir por 3. Parênteses ajudam a indicar a ordem do cálculo.",
+    "Para mostrar duas casas decimais, você pode usar print(f\"{media:.2f}\")."
+  ],
+  "tests": [
+    {
+      "input": "60\n70\n80\n",
+      "expected": "70.00",
+      "visible": true
+    },
+    {
+      "input": "1\n2\n2\n",
+      "expected": "1.67",
+      "visible": true
+    },
+    {
+      "input": "0\n0\n0\n",
+      "expected": "0.00",
+      "visible": true
+    },
+    {
+      "input": "100\n100\n100\n",
+      "expected": "100.00",
+      "visible": false
+    },
+    {
+      "input": "0\n0\n1\n",
+      "expected": "0.33",
+      "visible": false
+    },
+    {
+      "input": "0\n99\n100\n",
+      "expected": "66.33",
+      "visible": false
+    }
+  ]
+}

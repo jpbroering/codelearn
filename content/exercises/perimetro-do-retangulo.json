@@ -1,0 +1,49 @@
+{
+  "id": "perimetro-do-retangulo",
+  "version": 1,
+  "title": "Perímetro do retângulo",
+  "topic": "Entrada e saída",
+  "difficulty": "Básico",
+  "summary": "Some os lados de um retângulo para descobrir seu perímetro.",
+  "statement": "Uma moldura retangular precisa de uma fita que percorra toda a sua borda. Leia a largura e a altura da moldura, em centímetros, e calcule seu perímetro. O perímetro é a soma das medidas dos quatro lados.",
+  "inputFormat": "Duas linhas com números inteiros: a largura e a altura, nessa ordem.",
+  "outputFormat": "Um único inteiro com o perímetro em centímetros. Não imprima a unidade.",
+  "constraints": "1 ≤ largura, altura ≤ 10 000.",
+  "starter": "# Leia as medidas e calcule o perímetro.\n",
+  "hints": [
+    "Um retângulo tem dois lados com a medida da largura e dois com a medida da altura.",
+    "Some largura e altura e multiplique essa soma por 2."
+  ],
+  "tests": [
+    {
+      "input": "3\n5\n",
+      "expected": "16",
+      "visible": true
+    },
+    {
+      "input": "4\n4\n",
+      "expected": "16",
+      "visible": true
+    },
+    {
+      "input": "1\n8\n",
+      "expected": "18",
+      "visible": true
+    },
+    {
+      "input": "1\n1\n",
+      "expected": "4",
+      "visible": false
+    },
+    {
+      "input": "10000\n10000\n",
+      "expected": "40000",
+      "visible": false
+    },
+    {
+      "input": "7\n13\n",
+      "expected": "40",
+      "visible": false
+    }
+  ]
+}

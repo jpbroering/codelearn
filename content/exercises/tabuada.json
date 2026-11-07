@@ -1,0 +1,49 @@
+{
+  "id": "tabuada",
+  "version": 1,
+  "title": "Tabuada",
+  "topic": "Repetições",
+  "difficulty": "Básico",
+  "summary": "Use uma repetição para mostrar dez multiplicações.",
+  "statement": "Leia um número inteiro e mostre sua tabuada, do multiplicador 1 ao multiplicador 10, em ordem crescente. Cada linha deve indicar o número, o multiplicador e o produto.",
+  "inputFormat": "Uma linha contendo um número inteiro.",
+  "outputFormat": "Dez linhas no formato N x I = P, em que N é o número lido, I é o multiplicador e P é o produto. Use a letra x minúscula e um único espaço antes e depois de x e de =. Por exemplo: 3 x 2 = 6.",
+  "constraints": "−100 ≤ número ≤ 100.",
+  "starter": "# Percorra os multiplicadores de 1 a 10.\n",
+  "hints": [
+    "range(1, 11) gera os multiplicadores de 1 até 10; o limite final não é incluído.",
+    "Dentro do laço, calcule o produto e monte a linha com uma f-string, respeitando os espaços pedidos."
+  ],
+  "tests": [
+    {
+      "input": "3\n",
+      "expected": "3 x 1 = 3\n3 x 2 = 6\n3 x 3 = 9\n3 x 4 = 12\n3 x 5 = 15\n3 x 6 = 18\n3 x 7 = 21\n3 x 8 = 24\n3 x 9 = 27\n3 x 10 = 30",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "0 x 1 = 0\n0 x 2 = 0\n0 x 3 = 0\n0 x 4 = 0\n0 x 5 = 0\n0 x 6 = 0\n0 x 7 = 0\n0 x 8 = 0\n0 x 9 = 0\n0 x 10 = 0",
+      "visible": true
+    },
+    {
+      "input": "-2\n",
+      "expected": "-2 x 1 = -2\n-2 x 2 = -4\n-2 x 3 = -6\n-2 x 4 = -8\n-2 x 5 = -10\n-2 x 6 = -12\n-2 x 7 = -14\n-2 x 8 = -16\n-2 x 9 = -18\n-2 x 10 = -20",
+      "visible": true
+    },
+    {
+      "input": "1\n",
+      "expected": "1 x 1 = 1\n1 x 2 = 2\n1 x 3 = 3\n1 x 4 = 4\n1 x 5 = 5\n1 x 6 = 6\n1 x 7 = 7\n1 x 8 = 8\n1 x 9 = 9\n1 x 10 = 10",
+      "visible": false
+    },
+    {
+      "input": "100\n",
+      "expected": "100 x 1 = 100\n100 x 2 = 200\n100 x 3 = 300\n100 x 4 = 400\n100 x 5 = 500\n100 x 6 = 600\n100 x 7 = 700\n100 x 8 = 800\n100 x 9 = 900\n100 x 10 = 1000",
+      "visible": false
+    },
+    {
+      "input": "-100\n",
+      "expected": "-100 x 1 = -100\n-100 x 2 = -200\n-100 x 3 = -300\n-100 x 4 = -400\n-100 x 5 = -500\n-100 x 6 = -600\n-100 x 7 = -700\n-100 x 8 = -800\n-100 x 9 = -900\n-100 x 10 = -1000",
+      "visible": false
+    }
+  ]
+}

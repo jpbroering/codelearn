@@ -9,16 +9,18 @@ const workerFactory = () => {
   return { addEventListener: (event, callback) => worker.on(event, event === 'message' ? data => callback({ data }) : callback), postMessage: data => worker.postMessage(data), terminate: () => worker.terminate() };
 };
 const run = (code, input, options = {}) => execute(code, input, { ...options, workerFactory });
-test('soluções de referência passam em todos os casos oficiais', { timeout: 120000 }, async () => {
+test('soluções de referência passam em todos os casos oficiais', { timeout: 600000 }, async t => {
   for (const file of await readdir(new URL('../content/exercises/', import.meta.url))) {
     const exercise = JSON.parse(await readFile(new URL(`../content/exercises/${file}`, import.meta.url), 'utf8'));
-    assert.equal(exercise.id + '.json', file);
-    assert.ok(exercise.tests.some(t => t.visible) && exercise.tests.some(t => !t.visible));
-    const solution = await readFile(new URL(`../content/solutions/${exercise.id}.py`, import.meta.url), 'utf8');
-    const start = performance.now();
-    const result = await evaluate(solution, exercise.tests, { official: true, run });
-    assert.equal(result.status, 'accepted', JSON.stringify(result));
-    console.log(`${exercise.id}: ${exercise.tests.length} casos em ${Math.round(performance.now() - start)}ms`);
+    await t.test(exercise.id, { timeout: 120000 }, async () => {
+      assert.equal(exercise.id + '.json', file);
+      assert.ok(exercise.tests.some(test => test.visible) && exercise.tests.some(test => !test.visible));
+      const solution = await readFile(new URL(`../content/solutions/${exercise.id}.py`, import.meta.url), 'utf8');
+      const start = performance.now();
+      const result = await evaluate(solution, exercise.tests, { official: true, run });
+      assert.equal(result.status, 'accepted', JSON.stringify(result));
+      console.log(`${exercise.id}: ${exercise.tests.length} casos em ${Math.round(performance.now() - start)}ms`);
+    });
   }
 });
 test('entrada exaurida, sintaxe e exceção retornam erro de execução', { timeout: 60000 }, async () => {

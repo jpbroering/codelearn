@@ -1,0 +1,49 @@
+{
+  "id": "contagem-de-pares",
+  "version": 1,
+  "title": "Contagem de pares",
+  "topic": "Repetições",
+  "difficulty": "Básico",
+  "summary": "Conte quantos valores de uma sequência são divisíveis por 2.",
+  "statement": "Leia a quantidade de valores de uma sequência e depois leia cada valor. Conte quantos deles são pares. O zero e os números negativos divisíveis por 2 também devem ser contados.",
+  "inputFormat": "A primeira linha contém um inteiro N, a quantidade de valores. As próximas N linhas contêm um inteiro em cada linha.",
+  "outputFormat": "Uma linha com a quantidade de números pares, como um inteiro.",
+  "constraints": "1 ≤ N ≤ 100. −1 000 ≤ cada valor ≤ 1 000.",
+  "starter": "# Leia N valores e conte os que são pares.\n",
+  "hints": [
+    "Use um contador que começa em zero e faça exatamente N leituras dentro de um laço.",
+    "Aumente o contador somente quando o resto da divisão do valor por 2 for zero."
+  ],
+  "tests": [
+    {
+      "input": "5\n1\n2\n3\n4\n5\n",
+      "expected": "2",
+      "visible": true
+    },
+    {
+      "input": "3\n1\n3\n5\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "4\n0\n-2\n-3\n8\n",
+      "expected": "3",
+      "visible": true
+    },
+    {
+      "input": "1\n0\n",
+      "expected": "1",
+      "visible": false
+    },
+    {
+      "input": "1\n-999\n",
+      "expected": "0",
+      "visible": false
+    },
+    {
+      "input": "100\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n1000\n",
+      "expected": "100",
+      "visible": false
+    }
+  ]
+}

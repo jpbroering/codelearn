@@ -1,0 +1,64 @@
+{
+  "id": "ano-bissexto",
+  "version": 1,
+  "title": "Ano bissexto",
+  "topic": "Decisões",
+  "difficulty": "Básico",
+  "summary": "Combine condições de divisibilidade para classificar um ano.",
+  "statement": "Para esta atividade, aplique a seguinte regra a qualquer ano informado: um ano é bissexto se for divisível por 400 ou se for divisível por 4 e não for divisível por 100. Leia o ano e informe se ele é bissexto. Não é necessário considerar quando essa regra passou a ser usada na história.",
+  "inputFormat": "Uma linha contendo o ano, como um número inteiro positivo.",
+  "outputFormat": "Uma linha com BISSEXTO ou COMUM, em letras maiúsculas.",
+  "constraints": "1 ≤ ano ≤ 9 999.",
+  "starter": "# Verifique as regras de divisibilidade por 4, 100 e 400.\n",
+  "hints": [
+    "Use % para descobrir se a divisão por cada um dos três números deixa resto zero.",
+    "A divisibilidade por 400 é suficiente. Nos demais casos, o ano precisa ser divisível por 4 e não ser divisível por 100."
+  ],
+  "tests": [
+    {
+      "input": "2024\n",
+      "expected": "BISSEXTO",
+      "visible": true
+    },
+    {
+      "input": "2023\n",
+      "expected": "COMUM",
+      "visible": true
+    },
+    {
+      "input": "2000\n",
+      "expected": "BISSEXTO",
+      "visible": true
+    },
+    {
+      "input": "1900\n",
+      "expected": "COMUM",
+      "visible": false
+    },
+    {
+      "input": "2100\n",
+      "expected": "COMUM",
+      "visible": false
+    },
+    {
+      "input": "2400\n",
+      "expected": "BISSEXTO",
+      "visible": false
+    },
+    {
+      "input": "1\n",
+      "expected": "COMUM",
+      "visible": false
+    },
+    {
+      "input": "9999\n",
+      "expected": "COMUM",
+      "visible": false
+    },
+    {
+      "input": "4\n",
+      "expected": "BISSEXTO",
+      "visible": false
+    }
+  ]
+}

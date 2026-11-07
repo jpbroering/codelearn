@@ -1,0 +1,49 @@
+{
+  "id": "par-ou-impar",
+  "version": 1,
+  "title": "Par ou ímpar",
+  "topic": "Decisões",
+  "difficulty": "Básico",
+  "summary": "Use o resto da divisão para verificar a paridade de um inteiro.",
+  "statement": "Leia um número inteiro e informe se ele é par ou ímpar. Um número é par quando é divisível por 2, isto é, quando essa divisão deixa resto zero. O número zero é par.",
+  "inputFormat": "Uma linha contendo um número inteiro.",
+  "outputFormat": "Uma linha com PAR ou IMPAR, em letras maiúsculas e sem acento.",
+  "constraints": "−1 000 000 ≤ número ≤ 1 000 000.",
+  "starter": "# Verifique se o número é divisível por 2.\n",
+  "hints": [
+    "O operador % calcula o resto de uma divisão.",
+    "Compare numero % 2 com zero e escolha a mensagem com if e else."
+  ],
+  "tests": [
+    {
+      "input": "8\n",
+      "expected": "PAR",
+      "visible": true
+    },
+    {
+      "input": "7\n",
+      "expected": "IMPAR",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "PAR",
+      "visible": true
+    },
+    {
+      "input": "-3\n",
+      "expected": "IMPAR",
+      "visible": false
+    },
+    {
+      "input": "-1000000\n",
+      "expected": "PAR",
+      "visible": false
+    },
+    {
+      "input": "999999\n",
+      "expected": "IMPAR",
+      "visible": false
+    }
+  ]
+}

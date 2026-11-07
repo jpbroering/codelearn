@@ -1,0 +1,49 @@
+{
+  "id": "sinal-do-numero",
+  "version": 1,
+  "title": "Sinal do número",
+  "topic": "Decisões",
+  "difficulty": "Básico",
+  "summary": "Diferencie números positivos, negativos e o zero.",
+  "statement": "Leia um número inteiro e classifique seu sinal. Um número maior que zero é positivo; um número menor que zero é negativo. O zero deve receber uma classificação própria.",
+  "inputFormat": "Uma linha contendo um número inteiro.",
+  "outputFormat": "Uma linha com POSITIVO, NEGATIVO ou ZERO, de acordo com o valor lido. Use exatamente essas palavras em letras maiúsculas.",
+  "constraints": "−1 000 000 ≤ número ≤ 1 000 000.",
+  "starter": "# Compare o número com zero e escolha uma das três mensagens.\n",
+  "hints": [
+    "Há três possibilidades que não se sobrepõem: maior que zero, menor que zero e igual a zero.",
+    "Você pode testar os sinais com if e elif e reservar o else para o zero."
+  ],
+  "tests": [
+    {
+      "input": "12\n",
+      "expected": "POSITIVO",
+      "visible": true
+    },
+    {
+      "input": "-8\n",
+      "expected": "NEGATIVO",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "ZERO",
+      "visible": true
+    },
+    {
+      "input": "-1\n",
+      "expected": "NEGATIVO",
+      "visible": false
+    },
+    {
+      "input": "1\n",
+      "expected": "POSITIVO",
+      "visible": false
+    },
+    {
+      "input": "-1000000\n",
+      "expected": "NEGATIVO",
+      "visible": false
+    }
+  ]
+}

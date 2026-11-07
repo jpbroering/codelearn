@@ -1,0 +1,49 @@
+{
+  "id": "soma-de-dois-numeros",
+  "version": 1,
+  "title": "Soma de dois números",
+  "topic": "Entrada e saída",
+  "difficulty": "Básico",
+  "summary": "Leia dois inteiros e mostre o resultado da soma.",
+  "statement": "Uma atividade registra dois valores inteiros. Leia os dois valores e calcule a soma deles. Os valores podem ser positivos, negativos ou zero.",
+  "inputFormat": "Duas linhas, cada uma contendo um número inteiro.",
+  "outputFormat": "Um único inteiro com a soma dos dois valores. Não imprima mensagens adicionais.",
+  "constraints": "−1 000 000 ≤ cada valor ≤ 1 000 000.",
+  "starter": "# Leia os dois valores e imprima a soma.\n",
+  "hints": [
+    "Cada chamada de input() lê uma linha. Use int() para transformar o texto em inteiro.",
+    "O operador + soma dois números. Imprima o resultado com print()."
+  ],
+  "tests": [
+    {
+      "input": "3\n5\n",
+      "expected": "8",
+      "visible": true
+    },
+    {
+      "input": "-4\n9\n",
+      "expected": "5",
+      "visible": true
+    },
+    {
+      "input": "0\n0\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "-7\n-12\n",
+      "expected": "-19",
+      "visible": false
+    },
+    {
+      "input": "1000000\n1000000\n",
+      "expected": "2000000",
+      "visible": false
+    },
+    {
+      "input": "-1000000\n1000000\n",
+      "expected": "0",
+      "visible": false
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "soma-de-um-ate-n",
+  "version": 1,
+  "title": "Soma de um até N",
+  "topic": "Repetições",
+  "difficulty": "Básico",
+  "summary": "Acumule os inteiros de 1 até um limite informado.",
+  "statement": "Leia um inteiro N e calcule a soma de todos os inteiros de 1 até N, incluindo N. Se N for zero, não há valores nesse intervalo e a soma deve ser zero.",
+  "inputFormat": "Uma linha contendo o inteiro N.",
+  "outputFormat": "Uma linha com a soma calculada, como um número inteiro.",
+  "constraints": "0 ≤ N ≤ 10 000.",
+  "starter": "# Acumule os valores de 1 até N.\n",
+  "hints": [
+    "Inicie a soma com zero antes do laço.",
+    "Percorra range(1, n + 1) para incluir N. Se N for zero, esse laço não terá repetições."
+  ],
+  "tests": [
+    {
+      "input": "5\n",
+      "expected": "15",
+      "visible": true
+    },
+    {
+      "input": "1\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "2\n",
+      "expected": "3",
+      "visible": false
+    },
+    {
+      "input": "100\n",
+      "expected": "5050",
+      "visible": false
+    },
+    {
+      "input": "10000\n",
+      "expected": "50005000",
+      "visible": false
+    }
+  ]
+}

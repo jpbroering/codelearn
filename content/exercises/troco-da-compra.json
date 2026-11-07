@@ -1,0 +1,49 @@
+{
+  "id": "troco-da-compra",
+  "version": 1,
+  "title": "Troco da compra",
+  "topic": "Entrada e saída",
+  "difficulty": "Básico",
+  "summary": "Calcule o troco usando valores inteiros em centavos.",
+  "statement": "Uma compra é registrada em centavos para evitar contas com valores decimais. Leia o preço total e o valor pago, ambos em centavos, e calcule o troco. O valor pago será sempre suficiente para a compra.",
+  "inputFormat": "Duas linhas: a primeira contém o preço total e a segunda contém o valor pago, ambos como números inteiros em centavos.",
+  "outputFormat": "Um único inteiro com o troco em centavos. Não converta para reais nem imprima símbolo de moeda.",
+  "constraints": "0 ≤ preço total ≤ valor pago ≤ 1 000 000.",
+  "starter": "# Leia o preço e o pagamento, em centavos.\n",
+  "hints": [
+    "As duas entradas já usam a mesma unidade: centavos. Não é necessário dividir por 100.",
+    "O troco é o valor pago menos o preço total."
+  ],
+  "tests": [
+    {
+      "input": "1350\n2000\n",
+      "expected": "650",
+      "visible": true
+    },
+    {
+      "input": "500\n500\n",
+      "expected": "0",
+      "visible": true
+    },
+    {
+      "input": "99\n100\n",
+      "expected": "1",
+      "visible": true
+    },
+    {
+      "input": "0\n0\n",
+      "expected": "0",
+      "visible": false
+    },
+    {
+      "input": "0\n1000000\n",
+      "expected": "1000000",
+      "visible": false
+    },
+    {
+      "input": "999999\n1000000\n",
+      "expected": "1",
+      "visible": false
+    }
+  ]
+}

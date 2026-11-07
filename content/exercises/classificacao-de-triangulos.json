@@ -1,0 +1,69 @@
+{
+  "id": "classificacao-de-triangulos",
+  "version": 1,
+  "title": "Classificação de triângulos",
+  "topic": "Decisões",
+  "difficulty": "Básico",
+  "summary": "Verifique se três medidas formam um triângulo e classifique seus lados.",
+  "statement": "Leia três comprimentos inteiros positivos. Eles formam um triângulo somente se a soma de quaisquer dois lados for estritamente maior que o terceiro. Se não formarem um triângulo, informe INVALIDO. Caso contrário, classifique-o: EQUILATERO para três lados iguais, ISOSCELES para exatamente dois lados iguais ou ESCALENO para três lados diferentes.",
+  "inputFormat": "Três linhas, cada uma contendo o comprimento inteiro de um lado. Os lados podem ser informados em qualquer ordem.",
+  "outputFormat": "Uma linha com INVALIDO, EQUILATERO, ISOSCELES ou ESCALENO. Use letras maiúsculas e não use acentos.",
+  "constraints": "1 ≤ cada lado ≤ 10 000.",
+  "starter": "# Confira primeiro se as medidas podem formar um triângulo.\n",
+  "hints": [
+    "Verifique as três somas: a + b > c, a + c > b e b + c > a. Uma igualdade não é suficiente.",
+    "Depois de validar o triângulo, teste primeiro se todos os lados são iguais. Em seguida, procure um par de lados iguais."
+  ],
+  "tests": [
+    {
+      "input": "3\n3\n3\n",
+      "expected": "EQUILATERO",
+      "visible": true
+    },
+    {
+      "input": "2\n2\n3\n",
+      "expected": "ISOSCELES",
+      "visible": true
+    },
+    {
+      "input": "3\n4\n5\n",
+      "expected": "ESCALENO",
+      "visible": true
+    },
+    {
+      "input": "1\n2\n3\n",
+      "expected": "INVALIDO",
+      "visible": false
+    },
+    {
+      "input": "10\n1\n1\n",
+      "expected": "INVALIDO",
+      "visible": false
+    },
+    {
+      "input": "1\n1\n1\n",
+      "expected": "EQUILATERO",
+      "visible": false
+    },
+    {
+      "input": "3\n2\n3\n",
+      "expected": "ISOSCELES",
+      "visible": false
+    },
+    {
+      "input": "10000\n9999\n9998\n",
+      "expected": "ESCALENO",
+      "visible": false
+    },
+    {
+      "input": "1\n10\n1\n",
+      "expected": "INVALIDO",
+      "visible": false
+    },
+    {
+      "input": "2\n3\n3\n",
+      "expected": "ISOSCELES",
+      "visible": false
+    }
+  ]
+}

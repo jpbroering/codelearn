@@ -1,0 +1,49 @@
+{
+  "id": "antecessor-e-sucessor",
+  "version": 1,
+  "title": "Antecessor e sucessor",
+  "topic": "Entrada e saída",
+  "difficulty": "Básico",
+  "summary": "Encontre os inteiros imediatamente antes e depois de um número.",
+  "statement": "Leia um número inteiro e descubra seu antecessor e seu sucessor. O antecessor é o número uma unidade menor; o sucessor é o número uma unidade maior.",
+  "inputFormat": "Uma linha contendo um número inteiro.",
+  "outputFormat": "Duas linhas: na primeira, o antecessor; na segunda, o sucessor.",
+  "constraints": "−1 000 000 ≤ número ≤ 1 000 000.",
+  "starter": "# Leia um número e imprima seu antecessor e seu sucessor.\n",
+  "hints": [
+    "Guarde o número lido para usar o mesmo valor nos dois cálculos.",
+    "Subtraia 1 para obter o antecessor e some 1 para obter o sucessor. Use um print() para cada linha."
+  ],
+  "tests": [
+    {
+      "input": "8\n",
+      "expected": "7\n9",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "-1\n1",
+      "visible": true
+    },
+    {
+      "input": "-3\n",
+      "expected": "-4\n-2",
+      "visible": true
+    },
+    {
+      "input": "1\n",
+      "expected": "0\n2",
+      "visible": false
+    },
+    {
+      "input": "-1000000\n",
+      "expected": "-1000001\n-999999",
+      "visible": false
+    },
+    {
+      "input": "1000000\n",
+      "expected": "999999\n1000001",
+      "visible": false
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "situacao-do-aluno",
+  "version": 1,
+  "title": "Situação do aluno",
+  "topic": "Decisões",
+  "difficulty": "Básico",
+  "summary": "Classifique uma nota usando dois limites de aprovação.",
+  "statement": "Nesta atividade, uma escola fictícia usa uma nota inteira de 0 a 100. Uma nota maior ou igual a 70 significa aprovação. Uma nota de 50 a 69 significa recuperação. Uma nota menor que 50 significa reprovação. Leia a nota e informe a situação correspondente.",
+  "inputFormat": "Uma linha contendo uma nota inteira de 0 a 100.",
+  "outputFormat": "Uma linha com APROVADO, RECUPERACAO ou REPROVADO. Use letras maiúsculas e não use acentos.",
+  "constraints": "0 ≤ nota ≤ 100.",
+  "starter": "# Leia a nota e aplique os limites descritos no enunciado.\n",
+  "hints": [
+    "Teste primeiro a faixa mais alta: notas maiores ou iguais a 70.",
+    "Se a nota não entrou na primeira faixa, teste se ela é maior ou igual a 50. O restante corresponde à reprovação."
+  ],
+  "tests": [
+    {
+      "input": "85\n",
+      "expected": "APROVADO",
+      "visible": true
+    },
+    {
+      "input": "60\n",
+      "expected": "RECUPERACAO",
+      "visible": true
+    },
+    {
+      "input": "35\n",
+      "expected": "REPROVADO",
+      "visible": true
+    },
+    {
+      "input": "70\n",
+      "expected": "APROVADO",
+      "visible": false
+    },
+    {
+      "input": "69\n",
+      "expected": "RECUPERACAO",
+      "visible": false
+    },
+    {
+      "input": "50\n",
+      "expected": "RECUPERACAO",
+      "visible": false
+    },
+    {
+      "input": "49\n",
+      "expected": "REPROVADO",
+      "visible": false
+    },
+    {
+      "input": "0\n",
+      "expected": "REPROVADO",
+      "visible": false
+    },
+    {
+      "input": "100\n",
+      "expected": "APROVADO",
+      "visible": false
+    }
+  ]
+}

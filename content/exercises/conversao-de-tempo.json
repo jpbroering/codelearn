@@ -1,0 +1,54 @@
+{
+  "id": "conversao-de-tempo",
+  "version": 1,
+  "title": "Conversão de tempo",
+  "topic": "Entrada e saída",
+  "difficulty": "Básico",
+  "summary": "Transforme uma duração em segundos em horas, minutos e segundos.",
+  "statement": "Um cronômetro informa uma duração total em segundos. Converta essa duração em horas completas, minutos restantes e segundos restantes. Cada hora tem 3 600 segundos e cada minuto tem 60 segundos. As horas não devem voltar a zero ao completar um dia.",
+  "inputFormat": "Uma linha contendo a duração total, como um número inteiro de segundos.",
+  "outputFormat": "Uma linha com três inteiros separados por um único espaço, nesta ordem: horas, minutos e segundos. Não use zeros à esquerda nem imprima unidades.",
+  "constraints": "0 ≤ duração total ≤ 86 400. Os minutos e segundos da resposta devem estar entre 0 e 59.",
+  "starter": "# Separe a duração em horas, minutos e segundos.\n",
+  "hints": [
+    "Use // para contar horas completas. O operador % permite encontrar quantos segundos sobraram.",
+    "Depois de separar as horas, divida o restante por 60 para obter os minutos e use o resto dessa divisão para os segundos."
+  ],
+  "tests": [
+    {
+      "input": "3661\n",
+      "expected": "1 1 1",
+      "visible": true
+    },
+    {
+      "input": "59\n",
+      "expected": "0 0 59",
+      "visible": true
+    },
+    {
+      "input": "7200\n",
+      "expected": "2 0 0",
+      "visible": true
+    },
+    {
+      "input": "0\n",
+      "expected": "0 0 0",
+      "visible": false
+    },
+    {
+      "input": "3599\n",
+      "expected": "0 59 59",
+      "visible": false
+    },
+    {
+      "input": "86400\n",
+      "expected": "24 0 0",
+      "visible": false
+    },
+    {
+      "input": "60\n",
+      "expected": "0 1 0",
+      "visible": false
+    }
+  ]
+}

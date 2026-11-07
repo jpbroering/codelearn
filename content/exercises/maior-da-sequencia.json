@@ -1,0 +1,49 @@
+{
+  "id": "maior-da-sequencia",
+  "version": 1,
+  "title": "Maior da sequência",
+  "topic": "Repetições",
+  "difficulty": "Básico",
+  "summary": "Encontre o maior valor entre N inteiros, sem esquecer os negativos.",
+  "statement": "Leia a quantidade de valores de uma sequência e depois leia os valores. Mostre o maior número informado. A sequência terá pelo menos um valor e poderá conter somente números negativos.",
+  "inputFormat": "A primeira linha contém um inteiro N. As próximas N linhas contêm os valores da sequência, um inteiro por linha.",
+  "outputFormat": "Uma linha com o maior valor da sequência. Em caso de empate, imprima o valor apenas uma vez.",
+  "constraints": "1 ≤ N ≤ 100. −1 000 ≤ cada valor ≤ 1 000.",
+  "starter": "# Leia os valores e atualize o maior quando necessário.\n",
+  "hints": [
+    "Leia o primeiro valor como maior inicial. Depois, faltam N - 1 leituras.",
+    "Compare cada novo valor com o maior atual e atualize apenas quando o novo valor for maior."
+  ],
+  "tests": [
+    {
+      "input": "4\n3\n8\n2\n5\n",
+      "expected": "8",
+      "visible": true
+    },
+    {
+      "input": "3\n-9\n-2\n-7\n",
+      "expected": "-2",
+      "visible": true
+    },
+    {
+      "input": "1\n6\n",
+      "expected": "6",
+      "visible": true
+    },
+    {
+      "input": "1\n-1000\n",
+      "expected": "-1000",
+      "visible": false
+    },
+    {
+      "input": "4\n5\n5\n5\n5\n",
+      "expected": "5",
+      "visible": false
+    },
+    {
+      "input": "100\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n-1000\n1000\n",
+      "expected": "1000",
+      "visible": false
+    }
+  ]
+}
