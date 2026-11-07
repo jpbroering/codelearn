@@ -13,10 +13,13 @@ import { createTabs } from './tabs.js';
 import { createPracticeTests } from './practice-tests.js';
 import { icon } from './icons.js';
 import { escapeHtml as escape } from './html.js';
+import { matchesExercise, practiceLabel } from './catalog-search.js';
+import { installSkipLink, installWorkbenchToggle } from './workspace-actions.js';
 import { resultMarkup } from './result-view.js';
 import './style.css';
 
 const main = document.querySelector('main');
+installSkipLink(document.querySelector('.skip'), main);
 let storage;
 try { storage = window.localStorage; } catch { storage = { getItem() { throw Error(); }, setItem() { throw Error(); } }; }
 const store = createStore(storage, () => { document.querySelector('#storage-warning').hidden = false; });
@@ -31,7 +34,7 @@ function badge(status) { return `<span class="badge ${status === 'Resolvido' ? '
 function catalog() {
   const solved = exercises.filter(e => progress(store.get(e.id), e) === 'Resolvido').length;
   main.innerHTML = `
-    <section class="hero"><div><p class="eyebrow">SEU ESPAÇO DE PRÁTICA</p><h1>O próximo passo é<br><em>escrever o código.</em></h1><p class="intro">Pequenos desafios para construir uma boa base em Python.<br>Leia, experimente e aprenda com cada tentativa.</p><a class="button primary" href="#/exercicio/${exercises.find(e => progress(store.get(e.id), e) !== 'Resolvido')?.id ?? exercises[0].id}">Continuar praticando <span aria-hidden="true">↗</span></a></div><aside class="journey"><span class="eyebrow">SUA JORNADA</span><div class="journey-number">${solved}<span> / ${exercises.length}</span></div><p>exercícios resolvidos</p><div class="meter" role="progressbar" aria-label="Exercícios resolvidos" aria-valuenow="${solved}" aria-valuemin="0" aria-valuemax="${exercises.length}"><span style="width:${solved / exercises.length * 100}%"></span></div><small>Um pouco de prática já faz diferença.</small></aside></section>
+    <section class="hero"><div><p class="eyebrow">SEU ESPAÇO DE PRÁTICA</p><h1>O próximo passo é<br><em>escrever o código.</em></h1><p class="intro">Pequenos desafios para construir uma boa base em Python.<br>Leia, experimente e aprenda com cada tentativa.</p><a class="button primary" href="#/exercicio/${exercises.find(e => progress(store.get(e.id), e) !== 'Resolvido')?.id ?? exercises[0].id}">${practiceLabel(exercises, store)} <span aria-hidden="true">↗</span></a></div><aside class="journey"><span class="eyebrow">SUA JORNADA</span><div class="journey-number">${solved}<span> / ${exercises.length}</span></div><p>exercícios resolvidos</p><div class="meter" role="progressbar" aria-label="Exercícios resolvidos" aria-valuenow="${solved}" aria-valuemin="0" aria-valuemax="${exercises.length}"><span style="width:${solved / exercises.length * 100}%"></span></div><small>Um pouco de prática já faz diferença.</small></aside></section>
     <section class="catalog"><div class="section-heading"><div><p class="eyebrow">APRENDA FAZENDO</p><h2>Lista de exercícios</h2></div><span class="muted">${exercises.length} desafios para começar</span></div>
     <div class="filters"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar exercício…" aria-label="Buscar exercício"></label><label class="topic-label">Tema <select id="topic"><option value="">Todos os temas</option>${topics.map(t => `<option>${escape(t)}</option>`).join('')}</select></label></div>
     <div class="exercise-table"><div class="table-head"><span>EXERCÍCIO</span><span>TEMA</span><span>NÍVEL</span><span>PROGRESSO</span></div><div id="exercise-list"></div></div>
@@ -39,7 +42,7 @@ function catalog() {
   const update = () => {
     const query = main.querySelector('#search').value.toLocaleLowerCase('pt-BR');
     const topic = main.querySelector('#topic').value;
-    const matches = exercises.filter(e => (!topic || e.topic === topic) && `${e.title} ${e.summary}`.toLocaleLowerCase('pt-BR').includes(query));
+    const matches = exercises.filter(e => matchesExercise(e, query, topic));
     main.querySelector('#exercise-list').innerHTML = matches.map(e => `<a class="exercise-row" href="#/exercicio/${e.id}"><span class="exercise-title"><span class="exercise-number">${String(exercises.indexOf(e) + 1).padStart(2, '0')}</span><span><strong>${escape(e.title)}</strong><small>${escape(e.summary)}</small></span></span><span class="topic">${escape(e.topic)}</span><span class="level">● ${escape(e.difficulty)}</span>${badge(progress(store.get(e.id), e))}</a>`).join('') || '<p class="empty">Nenhum exercício encontrado. Experimente outro termo ou tema.</p>';
   };
   main.querySelector('#search').addEventListener('input', update);
@@ -67,27 +70,27 @@ function exercisePage(exercise) {
         <div class="pane-header"><span class="pane-title"><span class="description-icon">${icon('document')}</span> Enunciado</span><span class="pane-caption">Lógica de programação</span></div>
         <div class="statement-content" tabindex="0">
         <div class="exercise-heading"><p class="eyebrow">${escape(exercise.topic)} <span aria-hidden="true">/</span> ${index + 1} de ${exercises.length}</p><h1>${escape(exercise.title)}</h1><div class="exercise-meta"><span class="difficulty-label">${escape(exercise.difficulty)}</span><div id="exercise-status">${badge(progress(store.get(exercise.id), exercise))}</div></div></div>
-        <p class="statement-text">${escape(exercise.statement)}</p>
-        <h2 class="input-heading"><span aria-hidden="true">↳</span> Entrada</h2><p>${escape(exercise.inputFormat)}</p><h2 class="output-heading"><span aria-hidden="true">↱</span> Saída</h2><p>${escape(exercise.outputFormat)}</p><h2 class="constraints-heading">Restrições</h2><p class="constraints">${escape(exercise.constraints)}</p>
+        <p class="muted small">Você vai usar: ${exercise.prerequisites.map(escape).join(', ')}.</p><button class="button subtle" data-help>Ver dicas</button><p class="statement-text">${escape(exercise.statement)}</p>
+        <h2 class="input-heading"><span aria-hidden="true">↳</span> Entrada</h2><p>${escape(exercise.inputFormat)}</p><h2 class="output-heading"><span aria-hidden="true">↱</span> Saída</h2><p>${escape(exercise.outputFormat)}</p><p class="small">Imprima somente a resposta pedida. Não coloque perguntas em input(): use input() sem mensagem.</p><h2 class="constraints-heading">Restrições</h2><p class="constraints">${escape(exercise.constraints)}</p>
         <h2>Exemplos oficiais</h2><div class="examples">${exercise.tests.filter(t => t.visible).map((t, i) => `<details class="example" ${i === 0 ? 'open' : ''}><summary class="example-title">Exemplo ${i + 1}</summary><div class="example-columns"><div><small class="input-label">ENTRADA</small><pre>${escape(t.input.trimEnd())}</pre></div><div><small class="output-label">SAÍDA</small><pre>${escape(t.expected)}</pre></div></div></details>`).join('')}</div>
-        <div class="hints"><h2>Precisa de uma dica?</h2><div id="hint-list"></div><button id="hint-button" class="button subtle">Mostrar próxima dica</button></div>
+        <div class="hints" id="hints" tabindex="-1"><h2>Precisa de uma dica?</h2><div id="hint-list"></div><button id="hint-button" class="button subtle">Mostrar próxima dica</button></div>
         </div>
       </article>
       <div class="right-column">
         <section class="panel code-panel" aria-label="Escreva sua solução">
-          <div class="editor-toolbar"><span class="pane-title"><span class="code-icon">${icon('code')}</span> Código <span class="file-name">solucao.py</span></span><span class="runtime-label">Python 3 <span aria-hidden="true">·</span> ${LIMITS.executionMs / 1000}s / teste</span></div>
+          <div class="editor-toolbar"><span class="pane-title"><span class="code-icon">${icon('code')}</span> Código <span class="file-name">solucao.py</span></span><span class="runtime-label">Python 3 <span aria-hidden="true">·</span> até ${LIMITS.executionMs / 1000} segundos por teste</span></div>
           <div id="editor" aria-label="Editor da solução Python"></div>
           <div class="editor-foot"><span id="save-status">Salvamento local automático</span><span>Tab para indentar · Esc, Tab para sair</span></div>
-          <p id="run-status" role="status" aria-live="polite">Pronto para executar. Teste seu código antes de enviar.</p>
+          <div class="actions mobile-actions"><button class="button secondary" data-action="run">Executar testes</button><button class="button primary" data-action="submit">Enviar solução</button><button class="button subtle" data-action="cancel" hidden>Cancelar</button></div><p class="small action-help">Executar experimenta seus casos; Enviar avalia os casos do exercício e registra a resolução.</p><p id="run-status" role="status" aria-live="polite">Pronto para executar. Teste seu código antes de enviar.</p>
         </section>
         <section class="panel workbench" id="workbench" aria-label="Testes e resultados">
-          <div class="workbench-tabs" role="tablist" aria-label="Área de avaliação">
+          <button id="expand-workbench" class="button subtle" aria-expanded="false" aria-controls="workbench">Expandir painel</button><div class="workbench-tabs" role="tablist" aria-label="Área de avaliação">
             <button id="practice-tab" role="tab" aria-controls="practice-panel" aria-selected="true"><span class="test-icon">${icon('test')}</span> Testes de prática</button>
             <button id="result-tab" role="tab" aria-controls="result-panel" aria-selected="false"><span class="result-icon">${icon('terminal')}</span> Resultado <span id="result-indicator" aria-hidden="true"></span></button>
             <button id="history-tab" role="tab" aria-controls="history-panel" aria-selected="false">Histórico</button>
           </div>
           <div id="practice-panel" role="tabpanel" aria-labelledby="practice-tab"><p class="muted small">Casos editáveis para experimentar. A submissão usa os testes oficiais.</p><div id="cases"></div></div>
-          <div id="result-panel" role="tabpanel" aria-labelledby="result-tab" tabindex="0" hidden><div id="results"><p class="muted">Execute os testes ou envie uma solução para ver o resultado.</p></div></div>
+          <div id="result-panel" role="tabpanel" aria-labelledby="result-tab" tabindex="0" hidden><button class="button subtle" data-help>Ver dicas</button><div id="results"><p class="muted">Execute os testes ou envie uma solução para ver o resultado.</p></div></div>
           <div id="history-panel" role="tabpanel" aria-labelledby="history-tab" tabindex="0" hidden><h2 class="visually-hidden">Histórico local</h2><div id="history"></div></div>
         </section>
       </div>
@@ -119,24 +122,31 @@ function exercisePage(exercise) {
     const record = store.get(exercise.id);
     main.querySelector('#exercise-status').innerHTML = badge(progress(record, exercise));
     main.querySelector('#history').innerHTML = record.history.length
-      ? `<p class="muted small">Últimas 20 submissões neste navegador. Abra uma tentativa para consultar o código.</p>${record.history.map(h => `<details class="history-item"><summary><span class="result-label ${h.status === 'accepted' ? 'success' : 'failure'}">${h.status === 'accepted' ? '✓' : '✕'} ${escape(labels[h.status] ?? h.status)}</span><time>${escape(new Date(h.date).toLocaleString('pt-BR'))}</time><span class="muted">v${h.version}</span></summary><pre>${escape(h.code)}</pre></details>`).join('')}`
+      ? `<p class="muted small">Últimas 20 submissões neste navegador. Abra uma tentativa para consultar o código.</p>${record.history.map(h => `<details class="history-item"><summary><span class="result-label ${h.status === 'accepted' ? 'success' : 'failure'}">${h.status === 'accepted' ? '✓' : '✕'} ${escape(labels[h.status] ?? h.status)}</span><time>${escape(new Date(h.date).toLocaleString('pt-BR'))}</time><span class="muted">versão do exercício ${h.version}</span></summary><pre>${escape(h.code)}</pre>${h.diagnostic ? resultMarkup({ status: h.status, results: [h.diagnostic] }, true) : h.status === 'accepted' ? '<p class="muted small">Todos os casos do exercício passaram nesta tentativa.</p>' : '<p class="muted small">Diagnóstico não disponível para esta tentativa.</p>'}</details>`).join('')}`
       : '<p class="muted">Nenhuma submissão ainda. Envie uma solução para registrar sua primeira tentativa. Testes de prática não entram no histórico.</p>';
   }
-  main.querySelector('#hint-button').addEventListener('click', () => {
+  function showNextHint() {
     if (revealedHints >= exercise.hints.length) return;
     const p = document.createElement('p');
     p.textContent = `${revealedHints + 1}. ${exercise.hints[revealedHints++]}`;
     main.querySelector('#hint-list').append(p);
     if (revealedHints === exercise.hints.length) { main.querySelector('#hint-button').disabled = true; main.querySelector('#hint-button').textContent = 'Todas as dicas abertas'; }
-  });
+  }
+  main.querySelector('#hint-button').addEventListener('click', showNextHint);
+  main.querySelectorAll('[data-help]').forEach(button => button.addEventListener('click', () => {
+    showNextHint();
+    main.querySelector('#hints').focus();
+    main.querySelector('#hints').scrollIntoView({ block: 'nearest' });
+  }));
+  installWorkbenchToggle(main.querySelector('#expand-workbench'), main.querySelector('.right-column'), main.querySelector('.code-panel'));
   async function run(official) {
     if (controller) return;
     const code = editor.state.doc.toString();
     if (code.length > LIMITS.codeLimit) { main.querySelector('#run-status').textContent = 'O código deve ter até 100 mil caracteres.'; return; }
     const currentController = new AbortController(); controller = currentController;
     editor.dispatch({ effects: readOnly.reconfigure(EditorState.readOnly.of(true)) });
-    main.querySelectorAll('#run, #submit').forEach(button => { button.disabled = true; });
-    main.querySelector('#cancel').hidden = false;
+    main.querySelectorAll('#run, #submit, [data-action="run"], [data-action="submit"]').forEach(button => { button.disabled = true; });
+    main.querySelectorAll('#cancel, [data-action="cancel"]').forEach(button => { button.hidden = false; });
     main.querySelector('#save-status').textContent = 'Editor em leitura durante a execução';
     main.querySelector('#result-indicator').textContent = '↻';
     main.querySelector('#result-indicator').className = 'running';
@@ -157,20 +167,20 @@ function exercisePage(exercise) {
     controller = null;
     editor.dispatch({ effects: readOnly.reconfigure(EditorState.readOnly.of(false)) });
     practice.finish();
-    main.querySelectorAll('#run, #submit').forEach(button => { button.disabled = false; });
-    main.querySelector('#cancel').hidden = true;
+    main.querySelectorAll('#run, #submit, [data-action="run"], [data-action="submit"]').forEach(button => { button.disabled = false; });
+    main.querySelectorAll('#cancel, [data-action="cancel"]').forEach(button => { button.hidden = true; });
     main.querySelector('#save-status').textContent = 'Salvamento local automático';
     main.querySelector('#run-status').textContent = `${official ? 'Submissão oficial' : 'Testes de prática'}: ${labels[result.status]}.${result.status === 'accepted' && !official ? ' Envie a solução para registrar a resolução.' : ''}`;
     const success = result.status === 'accepted';
     main.querySelector('#result-indicator').textContent = success ? '✓' : '✕';
     main.querySelector('#result-indicator').className = success ? 'success' : 'failure';
     main.querySelector('#results').innerHTML = resultMarkup(result, official);
-    if (official) store.save(exercise.id, addSubmission(store.get(exercise.id), exercise, code, result.status));
+    if (official) store.save(exercise.id, addSubmission(store.get(exercise.id), exercise, code, result.status, undefined, result));
     renderHistory();
   }
-  main.querySelector('#run').addEventListener('click', () => run(false));
-  main.querySelector('#submit').addEventListener('click', () => run(true));
-  main.querySelector('#cancel').addEventListener('click', () => controller?.abort());
+  main.querySelectorAll('#run, [data-action="run"]').forEach(button => button.addEventListener('click', () => run(false)));
+  main.querySelectorAll('#submit, [data-action="submit"]').forEach(button => button.addEventListener('click', () => run(true)));
+  main.querySelectorAll('#cancel, [data-action="cancel"]').forEach(button => button.addEventListener('click', () => controller?.abort()));
   renderHistory();
 }
 function route() {

@@ -19,6 +19,8 @@ function validateExercise(exercise, file, ids) {
   if (!Number.isInteger(exercise.version) || exercise.version < 1) fail('versão deve ser inteiro positivo');
   if (exercise.starter !== undefined && typeof exercise.starter !== 'string') fail('código inicial inválido');
 
+  if (!Array.isArray(exercise.prerequisites) || !exercise.prerequisites.length || !exercise.prerequisites.every(value => typeof value === 'string' && value.trim())) fail('pré-requisitos inválidos');
+
   const validHints = Array.isArray(exercise.hints)
     && exercise.hints.every(hint => typeof hint === 'string' && hint.trim());
   if (!validHints) fail('dicas inválidas');

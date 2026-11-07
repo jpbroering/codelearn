@@ -323,3 +323,15 @@ pre { margin-top: 8px; font: 12px/1.75 var(--font-code); white-space: pre-wrap; 
   footer { flex-direction: column; gap: 8px; padding: 22px; }
 }
 @media(prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; } }
+
+/* Controles funcionais provisórios; a identidade visual será definida no Stitch. */
+.mobile-actions { display: none; }
+.action-help { margin: 0; padding: 6px 13px; color: var(--muted); }
+.code-panel { grid-template-rows: auto minmax(0, 1fr) auto auto auto auto; }
+.right-column.workbench-expanded { grid-template-rows: minmax(0, 1fr); }
+#expand-workbench { flex: 0 0 auto; align-self: flex-end; min-height: 28px; padding: 4px 8px; font-size: 11px; }
+@media(max-width: 760px), (max-height: 480px) {
+  .mobile-actions { display: flex; padding: 8px 12px; }
+  .code-panel { height: 520px; }
+  .right-column.workbench-expanded .workbench { height: 75dvh; max-height: none; }
+}

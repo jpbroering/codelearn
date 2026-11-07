@@ -55,6 +55,7 @@ O deploy é disparado pelo envio dos commits para `main`; criar um commit local 
 - [Decisões e andamento](docs/decisoes.md).
 - [Arquitetura, limites e contratos internos](docs/arquitetura.md).
 - [Conteúdo e como adicionar exercícios](docs/conteudo.md).
+- [Correções das auditorias e roteiro de validação funcional](docs/correcoes-ux.md).
 - [Material para proofreading dos 20 exercícios](docs/revisao-exercicios.md), gerado com `npm run review:content`.
 
 Os testes automatizados usam Pyodide real no Node e verificam correção, erros, loops, excesso de saída, cancelamento, isolamento e persistência. Os testes DOM também verificam as abas, navegação por teclado, indicadores e edição dos casos; testes de tema cobrem o sistema e a preferência manual. Não houve revisão em navegador nesta sessão porque a ferramenta de acesso ao navegador estava indisponível. A revisão visual, o uso em dispositivos móveis e a validação no GitHub Pages publicado permanecem pendentes.

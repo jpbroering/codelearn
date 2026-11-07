@@ -23,6 +23,7 @@ for (const [index, exercise] of exercises.entries()) {
   sections.push(
     `## ${index + 1}. ${exercise.title}`,
     `Identificador: \`${exercise.id}\` · Tema: ${exercise.topic} · Nível: ${exercise.difficulty} · Versão: ${exercise.version}`,
+    `**Você vai usar:** ${exercise.prerequisites.join(', ')}.`,
     `**Resumo:** ${exercise.summary}`,
     `**Enunciado**\n\n${exercise.statement}`,
     `**Entrada**\n\n${exercise.inputFormat}`,

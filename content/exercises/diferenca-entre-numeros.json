@@ -45,5 +45,12 @@
       "expected": "2000000",
       "visible": false
     }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "comparações",
+    "if/elif/else"
   ]
 }

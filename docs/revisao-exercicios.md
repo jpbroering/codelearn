@@ -44,6 +44,8 @@ Este arquivo é gerado a partir dos JSONs. Registre sugestões por identificador
 
 Identificador: `antecessor-e-sucessor` · Tema: Entrada e saída · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), operações aritméticas.
+
 **Resumo:** Encontre os inteiros imediatamente antes e depois de um número.
 
 **Enunciado**
@@ -109,7 +111,7 @@ Saída esperada:
 
 **Dicas**
 
-1. Guarde o número lido para usar o mesmo valor nos dois cálculos.
+1. input() devolve texto. Use int(input()) para ler um inteiro e guarde esse valor para usar nos dois cálculos.
 2. Subtraia 1 para obter o antecessor e some 1 para obter o sucessor. Use um print() para cada linha.
 
 [Enunciado e todos os testes](../content/exercises/antecessor-e-sucessor.json) · [Solução de referência](../content/solutions/antecessor-e-sucessor.py)
@@ -117,6 +119,8 @@ Saída esperada:
 ## 2. Área do terreno
 
 Identificador: `area-do-terreno` · Tema: Entrada e saída · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), operações aritméticas.
 
 **Resumo:** Transforme duas medidas na área de um terreno retangular.
 
@@ -192,6 +196,8 @@ Saída esperada:
 
 Identificador: `conversao-de-tempo` · Tema: Entrada e saída · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), operações aritméticas, resto da divisão (%), divisão inteira (//).
+
 **Resumo:** Transforme uma duração em segundos em horas, minutos e segundos.
 
 **Enunciado**
@@ -262,6 +268,8 @@ Saída esperada:
 ## 4. Média de três notas
 
 Identificador: `media-de-tres-notas` · Tema: Entrada e saída · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), operações aritméticas, formatação com f-strings.
 
 **Resumo:** Calcule uma média aritmética e formate a resposta com duas casas decimais.
 
@@ -340,6 +348,8 @@ Saída esperada:
 
 Identificador: `perimetro-do-retangulo` · Tema: Entrada e saída · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), operações aritméticas.
+
 **Resumo:** Some os lados de um retângulo para descobrir seu perímetro.
 
 **Enunciado**
@@ -413,6 +423,8 @@ Saída esperada:
 ## 6. Soma de dois números
 
 Identificador: `soma-de-dois-numeros` · Tema: Entrada e saída · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), operações aritméticas.
 
 **Resumo:** Leia dois inteiros e mostre o resultado da soma.
 
@@ -488,6 +500,8 @@ Saída esperada:
 
 Identificador: `troco-da-compra` · Tema: Entrada e saída · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), operações aritméticas.
+
 **Resumo:** Calcule o troco usando valores inteiros em centavos.
 
 **Enunciado**
@@ -562,6 +576,8 @@ Saída esperada:
 
 Identificador: `ano-bissexto` · Tema: Decisões · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), comparações, if/elif/else, resto da divisão (%).
+
 **Resumo:** Combine condições de divisibilidade para classificar um ano.
 
 **Enunciado**
@@ -632,6 +648,8 @@ BISSEXTO
 ## 9. Classificação de triângulos
 
 Identificador: `classificacao-de-triangulos` · Tema: Decisões · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), comparações, if/elif/else.
 
 **Resumo:** Verifique se três medidas formam um triângulo e classifique seus lados.
 
@@ -710,6 +728,8 @@ ESCALENO
 
 Identificador: `diferenca-entre-numeros` · Tema: Decisões · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), comparações, if/elif/else.
+
 **Resumo:** Descubra o maior valor e calcule a diferença entre dois inteiros.
 
 **Enunciado**
@@ -783,6 +803,8 @@ Saída esperada:
 ## 11. Maior de três números
 
 Identificador: `maior-de-tres-numeros` · Tema: Decisões · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), comparações, if/elif/else.
 
 **Resumo:** Compare três inteiros, incluindo empates e valores negativos.
 
@@ -861,6 +883,8 @@ Saída esperada:
 
 Identificador: `par-ou-impar` · Tema: Decisões · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), comparações, if/elif/else, resto da divisão (%).
+
 **Resumo:** Use o resto da divisão para verificar a paridade de um inteiro.
 
 **Enunciado**
@@ -931,6 +955,8 @@ PAR
 ## 13. Sinal do número
 
 Identificador: `sinal-do-numero` · Tema: Decisões · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), comparações, if/elif/else.
 
 **Resumo:** Diferencie números positivos, negativos e o zero.
 
@@ -1003,6 +1029,8 @@ ZERO
 
 Identificador: `situacao-do-aluno` · Tema: Decisões · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), comparações, if/elif/else.
+
 **Resumo:** Classifique uma nota usando dois limites de aprovação.
 
 **Enunciado**
@@ -1073,6 +1101,8 @@ REPROVADO
 ## 15. Contagem de pares
 
 Identificador: `contagem-de-pares` · Tema: Repetições · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), laços de repetição, contadores e acumuladores, resto da divisão (%).
 
 **Resumo:** Conte quantos valores de uma sequência são divisíveis por 2.
 
@@ -1157,6 +1187,8 @@ Saída esperada:
 
 Identificador: `contagem-regressiva` · Tema: Repetições · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), laços de repetição, contadores e acumuladores.
+
 **Resumo:** Mostre os inteiros de um valor inicial até zero.
 
 **Enunciado**
@@ -1231,6 +1263,8 @@ Saída esperada:
 ## 17. Maior da sequência
 
 Identificador: `maior-da-sequencia` · Tema: Repetições · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), laços de repetição, contadores e acumuladores.
 
 **Resumo:** Encontre o maior valor entre N inteiros, sem esquecer os negativos.
 
@@ -1311,6 +1345,8 @@ Saída esperada:
 
 Identificador: `soma-de-um-ate-n` · Tema: Repetições · Nível: Básico · Versão: 1
 
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), laços de repetição, contadores e acumuladores.
+
 **Resumo:** Acumule os inteiros de 1 até um limite informado.
 
 **Enunciado**
@@ -1381,6 +1417,8 @@ Saída esperada:
 ## 19. Soma dos negativos
 
 Identificador: `soma-dos-negativos` · Tema: Repetições · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), laços de repetição, contadores e acumuladores.
 
 **Resumo:** Percorra dez números e acumule somente os valores negativos.
 
@@ -1479,6 +1517,8 @@ Saída esperada:
 ## 20. Tabuada
 
 Identificador: `tabuada` · Tema: Repetições · Nível: Básico · Versão: 1
+
+**Você vai usar:** leitura com input(), conversão com int(), saída com print(), laços de repetição, contadores e acumuladores.
 
 **Resumo:** Use uma repetição para mostrar dez multiplicações.
 

@@ -45,5 +45,12 @@
       "expected": "66.33",
       "visible": false
     }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "operações aritméticas",
+    "formatação com f-strings"
   ]
 }

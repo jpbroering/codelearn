@@ -9,7 +9,7 @@ export function explainError(type, message = '') {
     ZeroDivisionError: 'Uma divisão recebeu zero como divisor. Confira o valor antes de dividir.',
     EOFError: 'O programa tentou ler além das linhas fornecidas pelo teste. Confira a quantidade de input().',
   };
-  return hints[type] ?? 'Revise o trecho indicado e consulte a mensagem original do Python abaixo.';
+  return Object.hasOwn(hints, type) ? hints[type] : 'Revise o trecho indicado e consulte a mensagem original do Python abaixo.';
 }
 
 // Allowlist compartilhada pelo avaliador e pela persistência: dados ocultos nunca são copiados.

@@ -50,5 +50,13 @@
       "expected": "0 1 0",
       "visible": false
     }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "operações aritméticas",
+    "resto da divisão (%)",
+    "divisão inteira (//)"
   ]
 }

@@ -60,5 +60,13 @@
       "expected": "BISSEXTO",
       "visible": false
     }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "comparações",
+    "if/elif/else",
+    "resto da divisão (%)"
   ]
 }

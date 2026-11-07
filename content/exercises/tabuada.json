@@ -45,5 +45,12 @@
       "expected": "-100 x 1 = -100\n-100 x 2 = -200\n-100 x 3 = -300\n-100 x 4 = -400\n-100 x 5 = -500\n-100 x 6 = -600\n-100 x 7 = -700\n-100 x 8 = -800\n-100 x 9 = -900\n-100 x 10 = -1000",
       "visible": false
     }
+  ],
+  "prerequisites": [
+    "leitura com input()",
+    "conversão com int()",
+    "saída com print()",
+    "laços de repetição",
+    "contadores e acumuladores"
   ]
 }
